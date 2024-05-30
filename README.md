@@ -1,44 +1,37 @@
 # dotfiles
 
-Linux 下配置文件备份
+Backup configuration
 
-## hyprland
+## Shell 脚本
+
+| name         | description                                          |
+| ------------ | ---------------------------------------------------- |
+| install.sh   | Backup origin config then copy dotfiles to ~/.config |
+| uninstall.sh | remove dotfiles then copy origin config to ~/.config |
+
+## Hyprland
 
 - Operating System: Arch
 - Window Manager: Hyprland
-- Status Bar: Waybar-hyprland-git
+- Status Bar: Waybar
 - Launcher: Wofi
-- Session Manager: Wlogout
 - Notifications: Mako
-- Terminal: Kitty (or Foot, make your choice)
-- File Manager: Thunar
-- Text Editor: Geany
-- Web Browser: Firefox
+- Terminal: Kitty
 
 ### packages
 
 - hyprland
-- swaybg
-- swayidle
 - swaylock
-- wlroots
 - wl-clipboard
-- waybar-hyprland-git
+- waybar
 - wofi
-- kitty (and/or foot)
+- kitty
 - mako
 - grim
 - slurp
-- wf-recorder
-- light
-- yad
-- thunar
-- geany
 - mpv
 - mpd
-- mpc
-- ncmpcpp
-- viewnior (or nomacs)
-- imagemagick
-- xfce-polkit (or polkit-gnome)
-- xorg-xwayland.
+- xorg-xwayland
+- brightnessctl
+- playerctl
+- hyprpaper
