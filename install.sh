@@ -16,6 +16,7 @@ bash=$config/bash
 fastfetch=$config/fastfetch
 fish=$config/fish
 kitty=$config/kitty
+wezterm=$config/wezterm
 nvim=$config/nvim
 starship=$config/starship.toml
 
@@ -41,6 +42,10 @@ fi
 
 if [[ -f $starship ]]; then
   /bin/mv -f $starship $nshare
+fi
+
+if [[ -d $wezterm ]]; then
+  /bin/mv -f $wezterm $nshare
 fi
 
 # Copy

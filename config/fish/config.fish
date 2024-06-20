@@ -7,3 +7,5 @@ command -q starship && starship init fish | source
 zoxide init fish | source
 
 [ -f ~/dotfiles/user/fish/config.fish ]; and . ~/dotfiles/user/fish/config.fish; or true
+
+proxy_on v2raya
