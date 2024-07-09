@@ -12,17 +12,13 @@ fi
 
 # Backup
 
-bash=$config/bash
 fastfetch=$config/fastfetch
 fish=$config/fish
 kitty=$config/kitty
 wezterm=$config/wezterm
 nvim=$config/nvim
+yazi=$config/yazi
 starship=$config/starship.toml
-
-if [[ -d $bash ]]; then
-  /bin/mv -f $bash $nshare
-fi
 
 if [[ -d $fastfetch ]]; then
   /bin/mv -f $fastfetch $nshare
@@ -46,6 +42,10 @@ fi
 
 if [[ -d $wezterm ]]; then
   /bin/mv -f $wezterm $nshare
+fi
+
+if [[ -d $yazi ]]; then
+  /bin/mv -f $yazi $nshare
 fi
 
 # Copy

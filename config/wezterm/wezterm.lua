@@ -1,12 +1,17 @@
 local wezterm = require("wezterm")
 
 return {
-  font = wezterm.font {
-    family = "Monaco Nerd Font"
-  },
+  font = wezterm.font_with_fallback({
+    "Monaco Nerd Font",
+    -- Icons
+    "Noto Color Emoji",
+    -- Chinese
+    "Noto Sans CJK SC",
+  }),
   font_size = 14,
   freetype_load_target = "Light",
-  color_scheme = "Adventure",
+  color_scheme = "Seti",
+  xcursor_theme = "Bibata-Modern-Ice",
   allow_square_glyphs_to_overflow_width = "WhenFollowedBySpace",
   enable_wayland = false,
   default_cursor_style = "SteadyBar",
@@ -64,10 +69,7 @@ return {
       key = "PageDown",
       mods = "CTRL|SHIFT",
       action = wezterm.action.ScrollByPage(1),
-    },
-    { key = "0", mods = "CTRL", action = wezterm.action.ResetFontSize },
-    { key = "=", mods = "CTRL", action = wezterm.action.IncreaseFontSize },
-    { key = "-", mods = "CTRL", action = wezterm.action.DecreaseFontSize },
-  },
+    }
+  }
 }
 
