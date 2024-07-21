@@ -26,17 +26,6 @@ return {
     priority = 1000,
     opts = {},
   },
-
-  -- Codeium
-  {
-    "Exafunction/codeium.vim",
-    event = "BufEnter",
-    config = function()
-      -- vim.keymap.set("i", "<M-x>", function() return vim.fn["codeium#Clear"]() end, { expr = true, silent = true })
-      vim.keymap.set("i", "<M-a>", function() return vim.fn["codeium#Accept"]() end, { expr = true, silent = true })
-    end,
-    enabled = true,
-  },
 }
 -- return {
 --

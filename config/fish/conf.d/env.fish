@@ -1,10 +1,24 @@
+function has_path
+  contains $argv[1] $PATH
+end
+
+function append_path
+  has_path $argv[1] || set PATH $PATH $argv[1]
+end
+
+function prepend_path
+  has_path $argv[1] || set PATH $argv[1] $PATH
+end
+
+prepend_path "$HOME/.local/bin"
+
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
 
 set -gx QT_QPA_PLATFORMTHEME qt6ct
-set -gx EDITOR neovide
+set -gx EDITOR nvim
 set -gx TS3_CONFIG_DIR "$XDG_CONFIG_HOME/ts3client"
 set -gx GNUPGHOME "$XDG_DATA_HOME/gnupg"
 set -gx CUDA_CACHE_PATH "$XDG_CACHE_HOME/nv"

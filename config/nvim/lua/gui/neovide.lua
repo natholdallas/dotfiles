@@ -1,7 +1,7 @@
 if os.getenv "XDG_SESSION_TYPE" == "wayland" then
-  vim.o.guifont = "FiraCode Nerd Font:h14"
+  vim.o.guifont = "CodeNewRoman Nerd Font:h14"
 else
-  vim.o.guifont = "FiraCode Nerd Font:h14"
+  vim.o.guifont = "CodeNewRoman Nerd Font:h14"
 end
 
 vim.g.neovide_transparency = 1
