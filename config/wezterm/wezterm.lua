@@ -24,6 +24,7 @@ return {
   window_background_opacity = 0.9,
   window_close_confirmation = "NeverPrompt",
   hide_tab_bar_if_only_one_tab = true,
+  max_fps = 144,
   hyperlink_rules = {
     -- Linkify things that look like URLs
     -- This is actually the default if you don't specify any hyperlink_rules

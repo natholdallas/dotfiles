@@ -24,3 +24,5 @@ if command -q tmux
     alias ta='tmux attach -t'
     alias tk='tmux kill-session -t'
 end
+
+alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
