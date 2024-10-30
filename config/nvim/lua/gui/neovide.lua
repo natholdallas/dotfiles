@@ -1,9 +1,4 @@
-if os.getenv "XDG_SESSION_TYPE" == "wayland" then
-  vim.o.guifont = "FiraCode Nerd Font:h14"
-else
-  vim.o.guifont = "FiraCode Nerd Font:h14"
-end
-
+vim.o.guifont = "Monaco Nerd Font:#e-subpixelantialias:#h-none"
 vim.g.neovide_transparency = 1
 vim.g.neovide_hide_mouse_when_typing = true
 -- vim.g.neovide_no_idle = true

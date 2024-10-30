@@ -18,7 +18,7 @@ set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
 
 set -gx QT_QPA_PLATFORMTHEME qt6ct
-set -gx EDITOR neovide
+set -gx EDITOR nvim
 set -gx TS3_CONFIG_DIR "$XDG_CONFIG_HOME/ts3client"
 set -gx GNUPGHOME "$XDG_DATA_HOME/gnupg"
 set -gx CUDA_CACHE_PATH "$XDG_CACHE_HOME/nv"
@@ -39,13 +39,10 @@ set -gx KOTLIN_HOME "/usr/share/kotlin"
 set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
 set -gx PNPM_HOME "$XDG_DATA_HOME/pnpm"
 set -gx GOPATH "$XDG_DATA_HOME/go"
-
-# Fcitx5
-# GTK_IM_MODULE=fcitx QT_IM_MODULE=fcitx XMODIFIERS=@im=fcitx SDL_IM_MODULE=fcitx INPUT_METHOD=fcitx GLFW_IM_MODULE=ibus
-if test $XDG_SESSION_TYPE = "wayland" && test $XDG_CURRENT_DESKTOP != "KDE"
-  set -gx GTK_IM_MODULE fcitx
-  set -gx QT_IM_MODULE fcitx
-end
+set -gx WECHAT_DATA_DIR "$XDG_DATA_HOME/wechat"
+set -gx QQ_FIX_MAC 1
+set -gx GTK_IM_MODULE fcitx
+set -gx QT_IM_MODULE fcitx
 set -gx XMODIFIERS @im=fcitx
 set -gx SDL_IM_MODULE fcitx
 set -gx INPUT_METHOD fcitx
