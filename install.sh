@@ -13,10 +13,12 @@ fi
 # Backup
 
 fastfetch=$config/fastfetch
+fcitx5=$config/fcitx5
 fish=$config/fish
+fontconfig=$config/fontconfig
 kitty=$config/kitty
-wezterm=$config/wezterm
 nvim=$config/nvim
+wezterm=$config/wezterm
 yazi=$config/yazi
 starship=$config/starship.toml
 
@@ -24,8 +26,16 @@ if [[ -d $fastfetch ]]; then
   /bin/mv -f $fastfetch $nshare
 fi
 
+if [[ -d $fcitx5 ]]; then
+  /bin/mv -f $fcitx5 $nshare
+fi
+
 if [[ -d $fish ]]; then
   /bin/mv -f $fish $nshare
+fi
+
+if [[ -d $fontconfig ]]; then
+  /bin/mv -f $fontconfig $nshare
 fi
 
 if [[ -d $kitty ]]; then

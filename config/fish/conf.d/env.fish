@@ -29,7 +29,7 @@ set -gx DISCORD_USER_DATA_DIR "$XDG_DATA_HOME"
 set -gx GRADLE_USER_HOME "$XDG_DATA_HOME/gradle"
 set -gx GTK_RC_FILES "$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
 set -gx GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
-set -gx SQLITE_HISTORY "$XDG_DATA_HOME/sqlite_history"
+set -gx SQLITE_HISTORY "$XDG_STATE_HOME/sqlite/history"
 set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
 set -gx PYTHON_HISTORY "$XDG_STATE_HOME/python/history"
 set -gx PYTHONPYCACHEPREFIX "$XDG_CACHE_HOME/python"
@@ -47,3 +47,4 @@ set -gx XMODIFIERS @im=fcitx
 set -gx SDL_IM_MODULE fcitx
 set -gx INPUT_METHOD fcitx
 set -gx GLFW_IM_MODULE ibus
+set -gx MYSQL_HISTFILE "$XDG_STATE_HOME/mysql/history"
