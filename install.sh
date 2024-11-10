@@ -8,7 +8,7 @@ nshare=$share/ndotfiles
 if [[ ! -d $nshare ]]; then
   mkdir $nshare
 elif [[ ! -z "$(ls -A $nshare)" ]]; then
-  rm -r ${nshare/*}
+  rm -r $nshare/*
 fi
 
 # Backup
@@ -18,7 +18,9 @@ fcitx5=$config/fcitx5
 fish=$config/fish
 fontconfig=$config/fontconfig
 kitty=$config/kitty
+mpv=$config/mpv
 nvim=$config/nvim
+tmux=$config/tmux
 wezterm=$config/wezterm
 yazi=$config/yazi
 starship=$config/starship.toml
@@ -43,8 +45,16 @@ if [[ -d $kitty ]]; then
   /bin/mv -f $kitty $nshare
 fi
 
+if [[ -d $mpv ]]; then
+  /bin/mv -f $mpv $nshare
+fi
+
 if [[ -d $nvim ]]; then
   /bin/mv -f $nvim $nshare
+fi
+
+if [[ -d $tmux ]]; then
+  /bin/mv -f $tmux $nshare
 fi
 
 if [[ -f $starship ]]; then
