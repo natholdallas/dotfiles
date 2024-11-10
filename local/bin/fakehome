@@ -1,0 +1,27 @@
+#! /usr/bin/bash
+
+export fake_home="$XDG_DATA_HOME/fakehome"
+mkdir -p "$fake_home"
+
+link_home_file() {
+	link_name="${1/#$HOME/$fake_home}"
+	if [[ ! -e "$link_name" ]]; then
+		ln -s "$1" "$link_name"
+	fi
+}
+
+# Remove all dead links if not link to $fake_home
+for file in "$fake_home"/{*,.*}; do
+	[[ -L "$file" ]] || continue
+	if [[ $(readlink "$file") != "$fake_home"/* ]] && [[ ! -e "$file" ]]; then
+		unlink "$file"
+	fi
+done
+
+# Link all files in $HOME to $fake_home
+for file in "$HOME"/{*,.*}; do
+	link_home_file "$file"
+done
+
+# Run
+_JAVA_OPTIONS="-Duser.home=$fake_home $_JAVA_OPTIONS" HOME=$fake_home exec "$@"

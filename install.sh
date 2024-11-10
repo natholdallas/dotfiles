@@ -1,4 +1,5 @@
 config=~/.config
+local=~/.local
 share=~/.local/share
 nshare=$share/ndotfiles
 
@@ -7,7 +8,7 @@ nshare=$share/ndotfiles
 if [[ ! -d $nshare ]]; then
   mkdir $nshare
 elif [[ ! -z "$(ls -A $nshare)" ]]; then
-  rm -r $nshare/*
+  rm -r ${nshare/*}
 fi
 
 # Backup
@@ -61,5 +62,6 @@ fi
 # Copy
 
 /bin/cp -rf config/* $config
+/bin/cp -rf local/* $local
 
 echo "Move origin configuration to $nshare"

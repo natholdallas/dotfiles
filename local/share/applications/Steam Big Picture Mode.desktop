@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Steam Big Picture Mode
+Comment=Play this game on Steam
+Exec=steam steam://open/bigpicture
+Icon=steam
+Terminal=false
+Type=Application
+Categories=Game;
