@@ -1,77 +1,32 @@
 config=~/.config
 local=~/.local
 share=~/.local/share
-nshare=$share/ndotfiles
+backup=$share/dotfiles-backup
 
 # Make dirs
 
-if [[ ! -d $nshare ]]; then
-  mkdir $nshare
-elif [[ ! -z "$(ls -A $nshare)" ]]; then
-  rm -r $nshare/*
+if [[ ! -d $backup ]]; then
+  mkdir $backup
+elif [[ ! -z "$(ls -A $backup)" ]]; then
+  rm -r $backup/*
 fi
 
 # Backup
 
-fastfetch=$config/fastfetch
-fcitx5=$config/fcitx5
-fish=$config/fish
-fontconfig=$config/fontconfig
-kitty=$config/kitty
-mpv=$config/mpv
-nvim=$config/nvim
-tmux=$config/tmux
-wezterm=$config/wezterm
-yazi=$config/yazi
-starship=$config/starship.toml
-
-if [[ -d $fastfetch ]]; then
-  /bin/mv -f $fastfetch $nshare
-fi
-
-if [[ -d $fcitx5 ]]; then
-  /bin/mv -f $fcitx5 $nshare
-fi
-
-if [[ -d $fish ]]; then
-  /bin/mv -f $fish $nshare
-fi
-
-if [[ -d $fontconfig ]]; then
-  /bin/mv -f $fontconfig $nshare
-fi
-
-if [[ -d $kitty ]]; then
-  /bin/mv -f $kitty $nshare
-fi
-
-if [[ -d $mpv ]]; then
-  /bin/mv -f $mpv $nshare
-fi
-
-if [[ -d $nvim ]]; then
-  /bin/mv -f $nvim $nshare
-fi
-
-if [[ -d $tmux ]]; then
-  /bin/mv -f $tmux $nshare
-fi
-
-if [[ -f $starship ]]; then
-  /bin/mv -f $starship $nshare
-fi
-
-if [[ -d $wezterm ]]; then
-  /bin/mv -f $wezterm $nshare
-fi
-
-if [[ -d $yazi ]]; then
-  /bin/mv -f $yazi $nshare
-fi
+/bin/mv -f "$config/fastfetch" $backup
+/bin/mv -f "$config/fcitx5" $backup
+/bin/mv -f "$config/fish" $backup
+/bin/mv -f "$config/fontconfig" $backup
+/bin/mv -f "$config/kitty" $backup
+/bin/mv -f "$config/mpv" $backup
+/bin/mv -f "$config/nvim" $backup
+/bin/mv -f "$config/wezterm" $backup
+/bin/mv -f "$config/yazi" $backup
+/bin/mv -f "$config/starship.toml" $backup
 
 # Copy
 
 /bin/cp -rf config/* $config
 /bin/cp -rf local/* $local
 
-echo "Move origin configuration to $nshare"
+echo "Move origin configuration to $backup"

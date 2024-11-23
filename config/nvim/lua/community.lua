@@ -10,5 +10,11 @@ return {
   { import = "astrocommunity.pack.tailwindcss" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.fish" },
+  { import = "astrocommunity.pack.python" },
+  { import = "astrocommunity.pack.python-ruff" },
+  { import = "astrocommunity.pack.toml" },
+  { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.xml" },
+  { import = "astrocommunity.pack.typescript" },
   -- import/override with your plugins folder
 }
