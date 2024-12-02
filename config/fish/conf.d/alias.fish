@@ -26,3 +26,6 @@ if command -q tmux
 end
 
 alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
+alias trash-screenshot="trash $HOME/Pictures/Screenshots/*"
+alias trash-cache="trash $XDG_CACHE_HOME/*"
+alias trash-useless="trash $HOME/.lemminx $HOME/.pki"

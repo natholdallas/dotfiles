@@ -16,5 +16,5 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.xml" },
   { import = "astrocommunity.pack.typescript" },
-  -- import/override with your plugins folder
+  { import = "astrocommunity.pack.kotlin" },
 }
