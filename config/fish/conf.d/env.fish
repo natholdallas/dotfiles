@@ -32,7 +32,7 @@ set -gx PYTHON_HISTORY "$XDG_STATE_HOME/python/history"
 set -gx PYTHONPYCACHEPREFIX "$XDG_CACHE_HOME/python"
 set -gx PYTHONUSERBASE "$XDG_DATA_HOME/python"
 set -gx JAVA_HOME (readlink -f /usr/bin/java | string replace "/bin/java" "")
-set -gx _JAVA_OPTIONS "-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java -Dlanguageserver.boot.symbolCacheDir=$XDG_CACHE_HOME/sts4/symbolCache"
+set -gx _JAVA_OPTIONS "-Djava.util.prefs.userRoot=$XDG_DATA_HOME/fakehome -Dlanguageserver.boot.symbolCacheDir=$XDG_CACHE_HOME/sts4/symbolCache"
 set -gx MAVEN_OPTS "-Dmaven.repo.local=$XDG_DATA_HOME/m2/repository"
 set -gx M2_HOME "/usr/share/java/maven"
 set -gx KOTLIN_HOME "/usr/share/kotlin"

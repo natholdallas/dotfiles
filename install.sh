@@ -24,6 +24,7 @@ fi
 /bin/mv -f "$config/wezterm" $backup
 /bin/mv -f "$config/yazi" $backup
 /bin/mv -f "$config/starship.toml" $backup
+/bin/mv -f "$config/mimeapps.list" $backup
 
 # Copy
 
