@@ -17,8 +17,9 @@ fi
 /bin/mv -f "$config/fcitx5" $backup
 /bin/mv -f "$config/fish" $backup
 /bin/mv -f "$config/fontconfig" $backup
+/bin/mv -f "$config/git" $backup
 /bin/mv -f "$config/kitty" $backup
-/bin/mv -f "$config/mpv" $backup
+/bin/mv -f "$config/npm" $backup
 /bin/mv -f "$config/nvim" $backup
 /bin/mv -f "$config/wezterm" $backup
 /bin/mv -f "$config/yazi" $backup

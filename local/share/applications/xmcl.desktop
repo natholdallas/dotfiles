@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=X Minecraft Launcher
+Exec=xmcl %U  --password-store=kwallet5
+Terminal=false
+Type=Application
+Icon=xmcl
+StartupWMClass=xmcl
+MimeType=x-scheme-handler/xmcl;
+Comment=A great minecraft launcher in the future
+Categories=Game;
