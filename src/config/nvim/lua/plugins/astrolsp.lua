@@ -44,7 +44,12 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      lemminx = { settings = { xml = { server = { workDir = "~/.cache/lemminx" } } } },
+      lemminx = { settings = { xml = {
+        server = { workDir = "~/.cache/lemminx" },
+      } } },
+      volar = { settings = { vue = {
+        server = { hybridMode = true },
+      } } },
     },
     -- customize how language servers are attached
     handlers = {

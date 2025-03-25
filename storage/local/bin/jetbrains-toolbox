@@ -1,0 +1,3 @@
+#! /usr/bin/bash
+
+fakehome /opt/jetbrains-toolbox/jetbrains-toolbox "$@"

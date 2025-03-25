@@ -8,7 +8,7 @@ return {
     opts = {
       options = {
         opt = {
-          guifont = "Monaco Nerd Font:#e-subpixelantialias:#h-none:h13",
+          guifont = "Monaco Nerd Font:#e-subpixelantialias:#h-none",
         },
         g = {
           neovide_transparency = 1,

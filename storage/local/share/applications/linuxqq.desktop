@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=QQ
+Exec=env DESKTOPINTEGRATION=false /usr/bin/linuxqq --no-sandbox --enable-features=UseOzonePlatform --ozone-platform-hint=auto --enable-wayland-ime %U
+Terminal=false
+Type=Application
+Icon=/usr/share/icons/linuxqq.png
+StartupWMClass=QQ
+X-AppImage-Version=25765
+Categories=Network;
+Comment=QQ

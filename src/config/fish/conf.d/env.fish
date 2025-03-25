@@ -1,16 +1,14 @@
 function has_path
-  contains $argv[1] $PATH
+    contains $argv[1] $PATH
 end
 
 function append_path
-  has_path $argv[1] || set PATH $PATH $argv[1]
+    has_path $argv[1] || set PATH $PATH $argv[1]
 end
 
 function prepend_path
-  has_path $argv[1] || set PATH $argv[1] $PATH
+    has_path $argv[1] || set PATH $argv[1] $PATH
 end
-
-prepend_path "$HOME/.local/bin"
 
 set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
@@ -32,19 +30,23 @@ set -gx PYTHON_HISTORY "$XDG_STATE_HOME/python/history"
 set -gx PYTHONPYCACHEPREFIX "$XDG_CACHE_HOME/python"
 set -gx PYTHONUSERBASE "$XDG_DATA_HOME/python"
 set -gx JAVA_HOME (readlink -f /usr/bin/java | string replace "/bin/java" "")
-set -gx _JAVA_OPTIONS "-Djava.util.prefs.userRoot=$XDG_DATA_HOME/fakehome -Dlanguageserver.boot.symbolCacheDir=$XDG_CACHE_HOME/sts4/symbolCache"
-set -gx MAVEN_OPTS "-Dmaven.repo.local=$XDG_DATA_HOME/m2/repository"
-set -gx M2_HOME "/usr/share/java/maven"
-set -gx KOTLIN_HOME "/usr/share/kotlin"
+set -gx _JAVA_OPTIONS "-Dlanguageserver.boot.symbolCacheDir=$XDG_CACHE_HOME/sts4/symbolCache"
+set -gx M2_HOME /usr/share/java/maven
+set -gx KOTLIN_HOME /usr/share/kotlin
 set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
 set -gx PNPM_HOME "$XDG_DATA_HOME/pnpm"
 set -gx GOPATH "$XDG_DATA_HOME/go"
+set -gx GOBIN "$GOPATH/bin"
 set -gx WECHAT_DATA_DIR "$XDG_DATA_HOME/wechat"
 set -gx QQ_FIX_MAC 1
 set -gx GTK_IM_MODULE fcitx
 set -gx QT_IM_MODULE fcitx
+set -gx QT4_IM_MODULE fcitx
 set -gx XMODIFIERS @im=fcitx
 set -gx SDL_IM_MODULE fcitx
 set -gx INPUT_METHOD fcitx
-set -gx GLFW_IM_MODULE ibus
+# set -gx GLFW_IM_MODULE ibus
 set -gx MYSQL_HISTFILE "$XDG_STATE_HOME/mysql/history"
+
+prepend_path "$HOME/.local/bin"
+prepend_path "$GOBIN"
