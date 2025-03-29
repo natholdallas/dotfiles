@@ -1,8 +1,6 @@
 [user]
 	name = NatholDallas
 	email = natholdallas@gmail.com
-[http "https://github.com"]
-	proxy = socks5://127.0.0.1:20170
 [init]
 	defaultBranch = main
 [core]
