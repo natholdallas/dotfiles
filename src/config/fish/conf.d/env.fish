@@ -15,6 +15,7 @@ set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
 
+set -gx TERM xterm-256color
 set -gx EDITOR nvim
 set -gx TS3_CONFIG_DIR "$XDG_CONFIG_HOME/ts3client"
 set -gx GNUPGHOME "$XDG_DATA_HOME/gnupg"

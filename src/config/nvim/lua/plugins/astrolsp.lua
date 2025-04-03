@@ -47,9 +47,9 @@ return {
       lemminx = { settings = { xml = {
         server = { workDir = "~/.cache/lemminx" },
       } } },
-      volar = { settings = { vue = {
-        server = { hybridMode = true },
-      } } },
+      -- volar = { settings = { vue = {
+      --   server = { hybridMode = true },
+      -- } } },
     },
     -- customize how language servers are attached
     handlers = {
