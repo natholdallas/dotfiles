@@ -47,6 +47,37 @@ return {
       lemminx = { settings = { xml = {
         server = { workDir = "~/.cache/lemminx" },
       } } },
+      volar = {
+        settings = {
+          vue = {
+            inlayHints = {
+              destructuredProps = false,
+              inlineHandlerLeading = false,
+              missingProps = false,
+              optionsWrapper = false,
+              vBindShorthand = false,
+            },
+            doctor = { status = false },
+            trace = { server = "off" },
+          },
+        },
+      },
+      vtsls = {
+        settings = {
+          typescript = {
+            -- locale = "zh-CN",
+            tsserver = { enableTracing = false },
+            inlayHints = {
+              functionLikeReturnTypes = { enabled = false },
+              variableTypes = { enabled = false },
+              parameterTypes = { enabled = false },
+              propertyDeclarationTypes = { enabled = false },
+              enumMemberValues = { enabled = false },
+              parameterNames = { enabled = "none" },
+            },
+          },
+        },
+      },
       -- volar = { settings = { vue = {
       --   server = { hybridMode = true },
       -- } } },
