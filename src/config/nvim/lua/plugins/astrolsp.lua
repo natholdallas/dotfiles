@@ -78,9 +78,6 @@ return {
           },
         },
       },
-      -- volar = { settings = { vue = {
-      --   server = { hybridMode = true },
-      -- } } },
     },
     -- customize how language servers are attached
     handlers = {

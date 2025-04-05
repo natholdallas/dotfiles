@@ -2,7 +2,7 @@
 Name=Visual Studio Code
 Comment=Code Editing. Refined.
 GenericName=Text Editor
-Exec=code --enable-features=UseOzonePlatform --ozone-platform-hint=auto --enable-wayland-ime %F
+Exec=env https_proxy=http://127.0.0.1:20172 code %F
 Icon=visual-studio-code
 Type=Application
 StartupNotify=false

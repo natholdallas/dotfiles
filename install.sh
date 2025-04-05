@@ -1,20 +1,16 @@
 # user folder
 config=~/.config
-local=~/.local
+loca=~/.local
 
 # backup folder
-backup=$local/share/dotfiles-backup
+backup=$loca/share/dotfiles-backup
 backup_config=$backup/config
-backup_local=$backup/local
+# backup_local=$backup/local
 
 # Make dirs
 
 if [[ ! -d $backup ]]; then
-  mkdir $backup
-  mkdir $backup_config
-  mkdir $backup_local
-  mkdir $backup_local/bin
-  mkdir $backup_local/share
+  mkdir -p "$backup/config" "$backup/local/bin" "$backup/local/share"
 elif [[ ! -z "$(ls -A $backup)" ]]; then
   rm -r $backup/config/*
   # rm -r $backup/local/share/*
@@ -43,6 +39,6 @@ fi
 # Copy
 
 /bin/cp -rf src/config/* $config
-/bin/cp -rf src/applications/* $local/share/applications
+/bin/cp -rf src/applications/* $loca/share/applications
 
 echo "Backup folder in $backup"
