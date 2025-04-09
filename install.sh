@@ -17,6 +17,14 @@ elif [[ ! -z "$(ls -A $backup)" ]]; then
   # rm -r $backup/local/bin/*
 fi
 
+if [[ ! -d $config ]]; then
+  mkdir -p $config
+fi
+
+if [[ ! -d $loca ]]; then
+  mkdir -p $loca
+fi
+
 # Backup
 
 /bin/mv -f "$config/MangoHud" $backup_config
@@ -39,6 +47,6 @@ fi
 # Copy
 
 /bin/cp -rf src/config/* $config
-/bin/cp -rf src/applications/* $loca/share/applications
+/bin/cp -rf src/local/* $loca
 
 echo "Backup folder in $backup"
