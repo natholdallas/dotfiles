@@ -12,4 +12,7 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.editing-support.vim-visual-multi" },
+  { import = "astrocommunity.colorscheme.gruvbox-nvim" },
+  { import = "astrocommunity.colorscheme.tokyodark-nvim" },
+  { import = "astrocommunity.colorscheme.monokai-pro-nvim" },
 }
