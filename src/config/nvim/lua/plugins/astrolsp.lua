@@ -29,7 +29,7 @@ return {
       },
       disabled = { -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
-        -- "lua_ls",
+        "lua_ls",
         "volar",
       },
       timeout_ms = 1000, -- default format timeout
@@ -60,6 +60,10 @@ return {
             doctor = { status = false },
             trace = { server = "off" },
           },
+          features = {
+            defaultTagNameCase = "kebab",
+            defaultAttrNameCase = "kebab",
+          },
         },
       },
       vtsls = {
@@ -76,6 +80,19 @@ return {
               parameterNames = { enabled = "none" },
             },
           },
+        },
+      },
+      gopls = {
+        analyses = { unusedparams = true },
+        staticcheck = true,
+        hints = {
+          assignVariableTypes = true,
+          compositeLiteralFields = true,
+          compositeLiteralTypes = true,
+          constantValues = true,
+          functionTypeParameters = true,
+          parameterNames = true,
+          rangeVariableTypes = true,
         },
       },
     },

@@ -10,8 +10,8 @@ return {
   opts = {
     sessions = {
       autosave = {
-        last = false
-      }
+        last = false,
+      },
     },
     -- Configure core features of AstroNvim
     features = {

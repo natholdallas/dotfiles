@@ -17,7 +17,7 @@ return {
       },
       astrotheme = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#0F1011" },
-      }
+      },
     },
     -- Icons can be configured throughout the interface
     icons = {
@@ -33,5 +33,9 @@ return {
       LSPLoading9 = "⠇",
       LSPLoading10 = "⠏",
     },
+  },
+  {
+    "felipeagc/fleet-theme-nvim",
+    "nickkadutskyi/jb.nvim",
   },
 }
