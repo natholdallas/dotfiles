@@ -36,6 +36,25 @@ return {
   },
   {
     "felipeagc/fleet-theme-nvim",
-    "nickkadutskyi/jb.nvim",
+  },
+  {
+    "datsfilipe/vesper.nvim",
+  },
+  {
+    "comfysage/gruvboxed",
+    -- priority = 1000,
+    opts = {
+      -- transparent_background = false,
+      contrast_dark = "hard",
+      -- override_terminal = true,
+      -- style = {
+      --   tabline = { reverse = true, color = "green" },
+      --   search = { reverse = false, inc_reverse = true },
+      --   types = { italic = true },
+      --   keyword = { italic = true },
+      --   comment = { italic = false },
+      -- },
+      overrides = {},
+    },
   },
 }

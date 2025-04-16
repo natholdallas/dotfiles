@@ -1,9 +1,9 @@
 # user folder
 config=~/.config
-loca=~/.local
+local=~/.local
 
 # backup folder
-backup=$loca/share/dotfiles-backup
+backup=$local/share/dotfiles-backup
 backup_config=$backup/config
 # backup_local=$backup/local
 
@@ -21,8 +21,8 @@ if [[ ! -d $config ]]; then
   mkdir -p $config
 fi
 
-if [[ ! -d $loca ]]; then
-  mkdir -p $loca
+if [[ ! -d $local ]]; then
+  mkdir -p $local
 fi
 
 # Backup
@@ -47,6 +47,6 @@ fi
 # Copy
 
 /bin/cp -rf src/config/* $config
-/bin/cp -rf src/local/* $loca
+/bin/cp -rf src/local/* $local
 
 echo "Backup folder in $backup"

@@ -1,0 +1,3 @@
+#! /usr/bin/bash
+
+steamfix /usr/bin/steam "$@"

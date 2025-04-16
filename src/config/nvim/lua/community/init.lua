@@ -2,6 +2,8 @@
 return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.pack.fish" },
+  { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.typescript" },
@@ -9,5 +11,4 @@ return {
   { import = "astrocommunity.colorscheme.tokyodark-nvim" },
   { import = "astrocommunity.colorscheme.hybrid-nvim" },
   { import = "astrocommunity.colorscheme.melange-nvim" },
-  { import = "astrocommunity.colorscheme.mellifluous-nvim" },
 }
