@@ -11,7 +11,6 @@ return {
           guifont = "Monaco Nerd Font,Noto Color Emoji:#e-subpixelantialias:#h-none",
         },
         g = {
-          neovide_transparency = 1,
           neovide_hide_mouse_when_typing = true,
           neovide_remember_window_size = true,
         },
