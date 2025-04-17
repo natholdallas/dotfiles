@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
-Exec=env https_proxy=http://127.0.0.1:20172 neovide %F
+Exec=env https_proxy=http://127.0.0.1:20172 env http_proxy=http://127.0.0.1:20172 neovide %F
 Icon=neovide
 Name=Neovide
 Keywords=Text;Editor;

@@ -38,23 +38,57 @@ return {
     "felipeagc/fleet-theme-nvim",
   },
   {
-    "datsfilipe/vesper.nvim",
+    "comfysage/gruvboxed",
+    opts = {
+      contrast_dark = "hard",
+    },
   },
   {
-    "comfysage/gruvboxed",
-    -- priority = 1000,
+    "Mofiqul/vscode.nvim",
     opts = {
-      -- transparent_background = false,
-      contrast_dark = "hard",
-      -- override_terminal = true,
-      -- style = {
-      --   tabline = { reverse = true, color = "green" },
-      --   search = { reverse = false, inc_reverse = true },
-      --   types = { italic = true },
-      --   keyword = { italic = true },
-      --   comment = { italic = false },
-      -- },
-      overrides = {},
+      transparent = false,
+      italic_comments = false,
+      underline_links = true,
+      disable_nvimtree_bg = true,
+      terminal_colors = true,
+
+      -- Override colors (see ./lua/vscode/colors.lua)
+      color_overrides = {
+        vscNone = "NONE",
+        vscFront = "#D4D4D4",
+        vscBack = "#1F1F1F",
+
+        vscTabCurrent = "#1F1F1F",
+        vscTabOther = "#2D2D2D",
+        vscTabOutside = "#252526",
+
+        vscLeftDark = "#252526",
+        vscLeftMid = "#373737",
+        vscLeftLight = "#636369",
+
+        vscPopupFront = "#BBBBBB",
+        vscPopupBack = "#202020",
+        vscPopupHighlightBlue = "#04395E",
+        vscPopupHighlightGray = "#343B41",
+
+        vscSplitLight = "#898989",
+        vscSplitDark = "#444444",
+        vscSplitThumb = "#424242",
+
+        vscCursorDarkDark = "#1F1F1F",
+        vscCursorDark = "#51504F",
+        vscCursorLight = "#AEAFAD",
+        vscSelection = "#264F78",
+        vscLineNumber = "#5A5A5A",
+
+        vscContext = "#404040",
+        vscContextCurrent = "#707070",
+
+        vscFoldBackground = "#202d39",
+
+        -- Low contrast with default background
+        vscDimHighlight = "#51504F",
+      },
     },
   },
 }
