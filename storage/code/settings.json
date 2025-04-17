@@ -1,12 +1,13 @@
 {
+  "chat.commandCenter.enabled": false,
   "http.proxy": "http://127.0.0.1:20172",
-  "window.zoomLevel": 1,
   "window.commandCenter": false,
+  "window.customTitleBarVisibility": "auto",
+  "window.zoomLevel": 1,
   "window.titleBarStyle": "custom",
-  "window.experimentalControlOverlay": false,
+  "workbench.activityBar.location": "hidden",
   "workbench.iconTheme": "symbols",
   "workbench.startupEditor": "none",
-  "workbench.activityBar.location": "hidden",
   "workbench.list.smoothScrolling": true,
   "workbench.tree.renderIndentGuides": "none",
   "workbench.editor.tabSizing": "fixed",
@@ -14,14 +15,15 @@
     "**/.nuxt": true,
     "**/node_modules": true
   },
+  "terminal.integrated.fontFamily": "Monaco Nerd Font", // ? Font
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.tabs.defaultIcon": "new-file",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.smoothScrolling": true,
-  "terminal.integrated.fontFamily": "Monaco Nerd Font",
+  "editor.accessibilitySupport": "on",
+  "editor.fontFamily": "Monaco Nerd Font Mono", // ? Font
   "editor.fontSize": 14,
   "editor.lineHeight": 1.7,
-  "editor.fontFamily": "Monaco Nerd Font",
   "editor.inlayHints.enabled": "off",
   "editor.cursorBlinking": "expand",
   "editor.cursorSmoothCaretAnimation": "on",
@@ -40,12 +42,8 @@
   "java.configuration.maven.globalSettings": "/home/natholdallas/.local/share/m2/settings.xml",
   "java.configuration.runtimes": [
     {
-      "name": "JavaSE-1.8",
-      "path": "/usr/lib/jvm/java-8-openjdk/jre"
-    },
-    {
       "name": "JavaSE-17",
-      "path": "/usr/lib/jvm/java-17-openjdk"
+      "path": "/usr/lib/jvm/liberica-jdk-17-full"
     },
     {
       "name": "JavaSE-21",
@@ -59,29 +57,29 @@
   "Lua.diagnostics.libraryFiles": "Disable",
   "Lua.workspace.library": [],
   // Vue
-  "vue.server.hybridMode": false,
+  "vue.server.hybridMode": true,
   // Typescript
   "typescript.updateImportsOnFileMove.enabled": "always",
-  // Apc
-  "apc.font.family": "Monaco Nerd Font",
-  "apc.imports": [
-    "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
-  ],
   // XML
   "xml.format.grammarAwareFormatting": false,
   "xml.server.workDir": "~/.cache/lemminx",
   // CSS
   "css.lint.unknownAtRules": "ignore",
+  // Apc
+  // "apc.font.family": "Monaco Nerd Font",
+  // "apc.imports": [
+  //   "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
+  // ],
   // Animation
-  "animations.Enabled": true,
-  "animations.Smooth-Mode": false,
-  "animations.CursorAnimation": false,
-  "animations.Tabs": "Flip",
-  "animations.Active": "Scale",
-  "animations.Scrolling": "Scale",
-  "animations.Command-Palette": "Fade",
-  "animations.Focus-Dimming-Mode": "None",
-  "animations.Install-Method": "Apc Customize UI++",
+  // "animations.Enabled": true,
+  // "animations.Smooth-Mode": true,
+  // "animations.CursorAnimation": true,
+  // "animations.Tabs": "Flip",
+  // "animations.Active": "Scale",
+  // "animations.Scrolling": "Scale",
+  // "animations.Command-Palette": "Fade",
+  // "animations.Focus-Dimming-Mode": "None",
+  // "animations.Install-Method": "Apc Customize UI++",
   // Other
   "projectManager.sortList": "Saved",
   "symbols.hidesExplorerArrows": true,
@@ -89,7 +87,7 @@
   "errorLens.messageBackgroundMode": "message",
   // Formatter
   "[vue]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -117,5 +115,19 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
   }
 }
