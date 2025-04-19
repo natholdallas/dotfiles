@@ -48,7 +48,7 @@ return {
     opts = {
       transparent = false,
       italic_comments = false,
-      underline_links = true,
+      underline_links = false,
       disable_nvimtree_bg = true,
       terminal_colors = true,
 
@@ -57,6 +57,7 @@ return {
         TabLineFill = { bg = "#171717" },
         StatusLine = { bg = "#1e1e1e" },
         NeoTreeIndentMarker = { fg = "#1e1e1e" },
+        NotifyBackground = { bg = "#1e1e1e" },
       },
 
       -- Override colors (see ./lua/vscode/colors.lua)
