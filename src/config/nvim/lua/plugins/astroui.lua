@@ -35,13 +35,8 @@ return {
     },
   },
   {
-    "felipeagc/fleet-theme-nvim",
-  },
-  {
     "comfysage/gruvboxed",
-    opts = {
-      contrast_dark = "hard",
-    },
+    opts = { contrast_dark = "hard" },
   },
   {
     "Mofiqul/vscode.nvim",

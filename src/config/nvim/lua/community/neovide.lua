@@ -8,7 +8,7 @@ return {
     opts = {
       options = {
         opt = {
-          guifont = "Monaco Nerd Font,Noto Color Emoji:#e-subpixelantialias:#h-none",
+          guifont = "Monaco Nerd Font,Noto Color Emoji:#h-none",
         },
         g = {
           neovide_hide_mouse_when_typing = true,

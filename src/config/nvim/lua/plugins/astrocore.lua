@@ -10,6 +10,7 @@ return {
   opts = {
     sessions = {
       autosave = {
+        cwd = true,
         last = false,
       },
     },

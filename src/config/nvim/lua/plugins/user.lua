@@ -19,6 +19,21 @@ return {
   --   },
   -- },
 
+  -- { import = "astrocommunity.completion.nvim-cmp" },
+  -- { import = "astrocommunity.completion.cmp-cmdline" },
+  -- {
+  --   "hrsh7th/nvim-cmp",
+  --   dependencies = {
+  --     "echasnovski/mini.icons",
+  --   },
+  -- },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      dashboard = { width = 50 },
+    },
+  },
+
   -- Surround
   {
     "kylechui/nvim-surround",
