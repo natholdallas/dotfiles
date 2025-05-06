@@ -9,10 +9,7 @@ return {
   ---@type AstroCoreOpts
   opts = {
     sessions = {
-      autosave = {
-        cwd = true,
-        last = false,
-      },
+      autosave = { cwd = true, last = false },
     },
     -- Configure core features of AstroNvim
     features = {

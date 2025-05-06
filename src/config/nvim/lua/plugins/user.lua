@@ -34,7 +34,6 @@ return {
     },
   },
 
-  -- Surround
   {
     "kylechui/nvim-surround",
     version = "*",
