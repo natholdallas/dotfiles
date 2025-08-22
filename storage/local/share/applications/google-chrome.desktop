@@ -7,7 +7,8 @@ GenericName=Web Browser
 # Gnome and KDE 3 uses Comment.
 Comment=Access the Internet
 StartupWMClass=Google-chrome
-Exec=env https_proxy=http://127.0.0.1:20172 /usr/bin/google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform-hint=auto --enable-wayland-ime %U
+# Exec=env https_proxy=http://127.0.0.1:20172 /usr/bin/google-chrome-stable --enable-features=UseOzonePlatform --ozone-platform-hint=auto --enable-wayland-ime %U
+Exec=env https_proxy=http://127.0.0.1:20172 /usr/bin/google-chrome-stable %U
 StartupNotify=true
 Terminal=false
 Icon=google-chrome

@@ -34,10 +34,10 @@ return {
       LSPLoading10 = "⠏",
     },
   },
-  {
-    "comfysage/gruvboxed",
-    opts = { contrast_dark = "hard" },
-  },
+  -- {
+  --   "comfysage/gruvboxed",
+  --   opts = { contrast_dark = "hard" },
+  -- },
   {
     "Mofiqul/vscode.nvim",
     opts = {

@@ -1,4 +1,4 @@
-if command -q exa
+if command -sq exa
     alias ls='exa --icons --sort type'
     alias lsa='exa -A --icons --sort type'
     alias ll='exa -Alh --icons --sort type'
@@ -12,17 +12,21 @@ else
     alias lt='tree -pCsh'
 end
 
-if command -q bat
+if command -sq bat
     alias cat='bat -pp'
     alias ccat='/usr/bin/cat'
 end
 
-if command -q tmux
+if command -sq tmux
     alias tt='tmux attach || tmux'
     alias tn='tmux new'
     alias tl='tmux ls'
     alias ta='tmux attach -t'
     alias tk='tmux kill-session -t'
+end
+
+if command -sq sudo-rs
+    alias sudo='sudo-rs'
 end
 
 alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"

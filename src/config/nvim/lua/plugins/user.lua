@@ -27,6 +27,17 @@ return {
   --     "echasnovski/mini.icons",
   --   },
   -- },
+
+  -- {
+  --   "DaikyXendo/nvim-material-icon",
+  --   opts = {
+  --     default = true,
+  --   },
+  -- },
+  {
+    "Comment.nvim",
+    enabled = true,
+  },
   {
     "folke/snacks.nvim",
     opts = {

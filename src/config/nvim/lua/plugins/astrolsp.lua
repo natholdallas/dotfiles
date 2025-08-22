@@ -45,26 +45,35 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
-      lemminx = { settings = { xml = {
-        server = { workDir = "~/.cache/lemminx" },
-      } } },
+      gopls = {
+        analyses = {},
+      },
+      lemminx = { settings = { xml = { server = { workDir = "~/.cache/lemminx" } } } },
       volar = {
         settings = {
+          disableFormatting = true,
           vue = {
             inlayHints = {
-              destructuredProps = false,
-              inlineHandlerLeading = false,
-              missingProps = false,
-              optionsWrapper = false,
-              vBindShorthand = false,
+              destructuredProps = true,
+              inlineHandlerLeading = true,
+              missingProps = true,
+              optionsWrapper = true,
+              vBindShorthand = true,
             },
+            complete = {
+              casing = {
+                tags = "pascal",
+                props = "kebab",
+              },
+            },
+            disableFormatting = true,
             doctor = { status = false },
             trace = { server = "off" },
           },
-          features = {
-            defaultTagNameCase = "kebab-case",
-            defaultAttrNameCase = "kebab-case",
-          },
+          -- features = {
+          --   defaultTagNameCase = "kebab-case",
+          --   defaultAttrNameCase = "kebab-case",
+          -- },
         },
       },
       vtsls = {
@@ -73,11 +82,11 @@ return {
             -- locale = "zh-CN",
             tsserver = { enableTracing = false },
             inlayHints = {
-              functionLikeReturnTypes = { enabled = false },
-              variableTypes = { enabled = false },
-              parameterTypes = { enabled = false },
-              propertyDeclarationTypes = { enabled = false },
-              enumMemberValues = { enabled = false },
+              functionLikeReturnTypes = { enabled = true },
+              variableTypes = { enabled = true },
+              parameterTypes = { enabled = true },
+              propertyDeclarationTypes = { enabled = true },
+              enumMemberValues = { enabled = true },
               parameterNames = { enabled = "none" },
             },
           },

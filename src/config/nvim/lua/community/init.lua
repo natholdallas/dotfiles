@@ -7,6 +7,10 @@ return {
   { import = "astrocommunity.pack.vue" },
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.html-css" },
+  { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.editing-support.vim-visual-multi" },
   { import = "astrocommunity.recipes.cache-colorscheme" },
+  { import = "astrocommunity.split-and-window.mini-map" },
+  { import = "astrocommunity.scrolling.nvim-scrollbar" },
 }

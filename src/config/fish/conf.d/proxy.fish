@@ -31,6 +31,14 @@ function proxy_on
     return 0
 end
 
+function po
+    proxy_on v2raya
+end
+
+function pf
+    proxy_off
+end
+
 function __proxy_on_complete
     set -l line (commandline -o)
     if [ (count $line) -eq 1 ]

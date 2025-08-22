@@ -34,6 +34,8 @@ fi
 /bin/mv -f "$config/fontconfig" $backup_config
 /bin/mv -f "$config/git" $backup_config
 /bin/mv -f "$config/kitty" $backup_config
+/bin/mv -f "$config/mpv" $backup_config
+/bin/mv -f "$config/neovide" $backup_config
 /bin/mv -f "$config/npm" $backup_config
 /bin/mv -f "$config/nvim" $backup_config
 /bin/mv -f "$config/wezterm" $backup_config
