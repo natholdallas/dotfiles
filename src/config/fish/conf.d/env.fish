@@ -45,7 +45,7 @@ set -gx EDITOR nvim
 set -gx QQ_FIX_MAC 1
 
 set -gx JAVA_HOME (readlink -f /usr/bin/java | string replace "/bin/java" "")
-set -gx _JAVA_OPTIONS "-Dlanguageserver.boot.symbolCacheDir=$XDG_CACHE_HOME/sts4/symbolCache -Xms3G -Xmx6G"
+set -gx _JAVA_OPTIONS "-Dlanguageserver.boot.symbolCacheDir=$XDG_CACHE_HOME/sts4/symbolCache"
 set -gx M2_HOME /usr/share/java/maven
 set -gx KOTLIN_HOME /usr/share/kotlin
 set -gx GOPATH "$XDG_DATA_HOME/go"
