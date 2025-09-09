@@ -13,12 +13,11 @@ if [[ ! -d $backup ]]; then
   mkdir -p "$backup/config" "$backup/local/bin" "$backup/local/share"
 elif [[ ! -z "$(ls -A $backup)" ]]; then
   rm -r $backup/config/*
-  # rm -r $backup/local/share/*
-  # rm -r $backup/local/bin/*
 fi
 
 if [[ ! -d $config ]]; then
   mkdir -p $config
+  mkdir -p "$config/yazi"
 fi
 
 if [[ ! -d $local ]]; then
@@ -39,12 +38,12 @@ fi
 /bin/mv -f "$config/npm" $backup_config
 /bin/mv -f "$config/nvim" $backup_config
 /bin/mv -f "$config/wezterm" $backup_config
-/bin/mv -f "$config/yazi" $backup_config
+/bin/mv -f "$config/yazi/init.lua" $backup_config/yazi
+/bin/mv -f "$config/yazi/keymap.toml" $backup_config/yazi
+/bin/mv -f "$config/yazi/theme.toml" $backup_config/yazi
+/bin/mv -f "$config/yazi/yazi.toml" $backup_config/yazi
 /bin/mv -f "$config/mimeapps.list" $backup_config
 /bin/mv -f "$config/starship.toml" $backup_config
-
-# /bin/mv -f "$local_share/applications" $backup_local_share
-# /bin/mv -f "$local_bin" $backup_local_bin
 
 # Copy
 

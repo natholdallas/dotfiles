@@ -2,36 +2,24 @@
 
 Backup configuration
 
-## Shell 脚本
+## Installation
 
-| name         | description                                          |
-| ------------ | ---------------------------------------------------- |
-| install.sh   | Backup origin config then copy dotfiles to ~/.config |
-| uninstall.sh | remove dotfiles then copy origin config to ~/.config |
+| name       | description                                          |
+| ---------- | ---------------------------------------------------- |
+| install.sh | Backup origin config then copy dotfiles to ~/.config |
 
-## Hyprland
+## Yazi
 
-- Operating System: Arch
-- Window Manager: Hyprland
-- Status Bar: Waybar
-- Launcher: Wofi
-- Notifications: Mako
-- Terminal: Kitty
+available themes
 
-### packages
+- flexoki-dark
+- vscode-dark-modern
 
-- hyprland
-- swaylock
-- wl-clipboard
-- waybar
-- wofi
-- kitty
-- mako
-- grim
-- slurp
-- mpv
-- mpd
-- xorg-xwayland
-- brightnessctl
-- playerctl
-- hyprpaper
+## Prepend path
+
+| name      | description                                              |
+| --------- | -------------------------------------------------------- |
+| fakehome  | can create fakehome environment, example: fakehome steam |
+| steam     | steam with steamfix                                      |
+| steamfix  | none                                                     |
+| yazi-sync | sync yazi package, some plugin and themes                |

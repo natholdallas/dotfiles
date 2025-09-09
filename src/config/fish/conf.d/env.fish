@@ -62,6 +62,8 @@ set -gx GOBIN "$GOPATH/bin"
 set -gx REDISCLI_HISTFILE "$XDG_DATA_HOME/redis/rediscli_history"
 set -gx REDISCLI_RCFILE "$XDG_CONFIG_HOME/redis/redisclirc"
 
+set -gx NVM_DIR "$XDG_DATA_HOME/nvm"
+
 # Game
 # set -gx RADV_PERFTEST gpl
 # set -gx SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS 0

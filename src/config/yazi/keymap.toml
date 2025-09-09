@@ -5,27 +5,50 @@ run = [
 	"yank",
 ]
 
+
 [[manager.prepend_keymap]]
 on = ["c", "m"]
 run = "plugin chmod"
 desc = "Chmod on selected files"
 
-[[manager.prepend_keymap]]
-on = ["m"]
-run = "plugin bookmarks save"
-desc = "Save current position as a bookmark"
 
 [[manager.prepend_keymap]]
-on = ["'"]
-run = "plugin bookmarks jump"
-desc = "Jump to a bookmark"
+on = ["Y", "c"]
+run = ["plugin copy-file-contents"]
+desc = "Copy contents of file"
+
 
 [[manager.prepend_keymap]]
-on = ["b", "d"]
-run = "plugin bookmarks delete"
-desc = "Delete a bookmark"
+on = ["g", "t"]
+run = "plugin recycle-bin open"
+desc = "Go to Trash"
+
 
 [[manager.prepend_keymap]]
-on = ["b", "D"]
-run = "plugin bookmarks delete_all"
-desc = "Delete all bookmarks"
+on = ["R", "o"]
+run = "plugin recycle-bin open"
+desc = "Open Trash"
+
+
+[[manager.prepend_keymap]]
+on = ["R", "e"]
+run = "plugin recycle-bin empty"
+desc = "Empty Trash"
+
+
+[[manager.prepend_keymap]]
+on = ["R", "d"]
+run = "plugin recycle-bin delete"
+desc = "Delete from Trash"
+
+
+[[manager.prepend_keymap]]
+on = ["R", "D"]
+run = "plugin recycle-bin emptyDays"
+desc = "Empty by days deleted"
+
+
+[[manager.prepend_keymap]]
+on = ["R", "r"]
+run = "plugin recycle-bin restore"
+desc = "Restore from Trash"
