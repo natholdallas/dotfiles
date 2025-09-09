@@ -13,7 +13,7 @@ desc = "Chmod on selected files"
 
 
 [[manager.prepend_keymap]]
-on = ["Y", "c"]
+on = ["A", "y"]
 run = ["plugin copy-file-contents"]
 desc = "Copy contents of file"
 
