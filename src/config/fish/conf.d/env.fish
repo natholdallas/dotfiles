@@ -15,6 +15,17 @@ set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
 
+# pnpm
+if command -sq pnpm
+    set -q PNPM_HOME || set -gx PNPM_HOME "$HOME/.local/share/pnpm"
+    prepend_path "$PNPM_HOME"
+end
+
+if command -sq npm
+    set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
+    prepend_path "$XDG_DATA_HOME/npm/bin"
+end
+
 # XDG FIX
 set -gx CUDA_CACHE_PATH "$XDG_CACHE_HOME/nv"
 set -gx PYTHONPYCACHEPREFIX "$XDG_CACHE_HOME/python"
@@ -26,7 +37,6 @@ set -gx WGETRC "$XDG_CONFIG_HOME/wgetrc"
 set -gx GTK_RC_FILES "$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
 set -gx GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 set -gx TS3_CONFIG_DIR "$XDG_CONFIG_HOME/ts3client"
-set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
 
 set -gx NODE_REPL_HISTORY "$XDG_DATA_HOME/node_repl_history"
 set -gx DISCORD_USER_DATA_DIR "$XDG_DATA_HOME"
@@ -34,7 +44,6 @@ set -gx GNUPGHOME "$XDG_DATA_HOME/gnupg"
 set -gx GRADLE_USER_HOME "$XDG_DATA_HOME/gradle"
 set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
 set -gx PYTHONUSERBASE "$XDG_DATA_HOME/python"
-set -gx PNPM_HOME "$XDG_DATA_HOME/pnpm"
 
 set -gx MYSQL_HISTFILE "$XDG_STATE_HOME/mysql/history"
 set -gx SQLITE_HISTORY "$XDG_STATE_HOME/sqlite/history"
@@ -61,8 +70,6 @@ set -gx GOBIN "$GOPATH/bin"
 
 set -gx REDISCLI_HISTFILE "$XDG_DATA_HOME/redis/rediscli_history"
 set -gx REDISCLI_RCFILE "$XDG_CONFIG_HOME/redis/redisclirc"
-
-set -gx NVM_DIR "$XDG_DATA_HOME/nvm"
 
 # Game
 # set -gx RADV_PERFTEST gpl

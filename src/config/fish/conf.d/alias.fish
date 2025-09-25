@@ -29,8 +29,19 @@ if command -sq sudo-rs
     alias sudo='sudo-rs'
 end
 
-alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
-alias trash-screenshot="trash $HOME/Pictures/Screenshots/*"
-alias trash-cache="trash $XDG_CACHE_HOME/*"
-alias trash-useless="trash $HOME/.lemminx $HOME/.pki"
+if command -sq fd
+    alias fd="fd -HIg"
+end
+
+if command -sq trash
+    alias trash-screenshot="trash $HOME/Pictures/Screenshots/*"
+    alias trash-cache="trash $XDG_CACHE_HOME/*"
+    alias trash-useless="trash $HOME/.lemminx $HOME/.pki"
+end
+
+if command -sq yarn
+    alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
+end
+
+alias rm="rm -vr"
 # alias wget="wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""
