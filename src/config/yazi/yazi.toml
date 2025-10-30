@@ -2,3 +2,4 @@
 ratio = [2, 4, 2]
 linemode = "size_and_mtime"
 show_hidden = true
+show_symlink = true

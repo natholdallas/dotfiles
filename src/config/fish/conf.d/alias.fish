@@ -43,5 +43,9 @@ if command -sq yarn
     alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
 end
 
+if command -sq adb
+    alias adb="HOME=$XDG_DATA_HOME/android adb"
+end
+
 alias rm="rm -vr"
 # alias wget="wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""

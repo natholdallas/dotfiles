@@ -27,6 +27,7 @@ if command -sq npm
 end
 
 # XDG FIX
+set -gx ANDROID_USER_HOME "$XDG_DATA_HOME/android"
 set -gx CUDA_CACHE_PATH "$XDG_CACHE_HOME/nv"
 set -gx PYTHONPYCACHEPREFIX "$XDG_CACHE_HOME/python"
 set -gx __GL_SHADER_DISK_CACHE_PATH "$XDG_CACHE_HOME/nv"
