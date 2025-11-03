@@ -36,7 +36,6 @@ end
 if command -sq trash
     alias trash-screenshot="trash $HOME/Pictures/Screenshots/*"
     alias trash-cache="trash $XDG_CACHE_HOME/*"
-    alias trash-useless="trash $HOME/.lemminx $HOME/.pki"
 end
 
 if command -sq yarn
@@ -47,5 +46,10 @@ if command -sq adb
     alias adb="HOME=$XDG_DATA_HOME/android adb"
 end
 
+if command -sq wget
+    alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
+end
+
 alias rm="rm -vr"
+alias st="shutdown now"
 # alias wget="wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""
