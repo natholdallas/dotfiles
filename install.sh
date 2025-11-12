@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 # user folder
 config=~/.config
 local=~/.local
@@ -43,3 +45,8 @@ fi
 /bin/cp -rf src/local/* $local
 
 echo "Backup folder in $backup"
+
+# Fixes
+
+# rm "$config/yazi/keymap.toml-*"
+# rm "$config/yazi/yazi.toml-*"
