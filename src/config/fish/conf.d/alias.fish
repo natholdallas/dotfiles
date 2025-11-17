@@ -51,5 +51,3 @@ if command -sq wget
 end
 
 alias rm="rm -vr"
-alias st="shutdown now"
-# alias wget="wget --hsts-file=\"$XDG_DATA_HOME/wget-hsts\""

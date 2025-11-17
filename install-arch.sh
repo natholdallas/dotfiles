@@ -1,8 +1,9 @@
 #!/usr/bin/bash
 
-paru -S zip unzip fish neovide neovim zoxide yazi mpv fastfetch starship kitty git wezterm npm mangohud fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx5-gtk fcitx5-pinyin-zhwiki fcitx5-qt wget tmux exa bat sudo-rs fd trash-cli
-
 ./install.sh
+
+# aur
+paru -S zip unzip fish neovide neovim zoxide yazi mpv fastfetch starship kitty git wezterm npm mangohud fcitx5 fcitx5-chinese-addons fcitx5-configtool fcitx5-gtk fcitx5-pinyin-zhwiki fcitx5-qt wget tmux exa bat sudo-rs fd trash-cli
 
 # plugins
 ya pkg add yazi-rs/plugins:chmod
