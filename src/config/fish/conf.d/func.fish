@@ -53,3 +53,20 @@ function __proxy_on_complete
 end
 
 complete -f -c proxy_on -a '(__proxy_on_complete)'
+
+function initkde
+    if [ -f "/etc/xdg/menus/plasma-applications.menu" ]
+        XDG_MENU_PREFIX=plasma- kbuildsycoca6
+    else if [ -f "/etc/xdg/menus/arch-applications.menu" ]
+        XDG_MENU_PREFIX=arch- kbuildsycoca6
+    end
+end
+
+function y
+    set tmp (mktemp -t "yazi-cwd.XXXXXX")
+    yazi $argv --cwd-file="$tmp"
+    if read -z cwd <"$tmp"; and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
+        builtin cd -- "$cwd"
+    end
+    rm -f -- "$tmp"
+end
