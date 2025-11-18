@@ -14,6 +14,9 @@ set -gx XDG_CONFIG_HOME "$HOME/.config"
 set -gx XDG_CACHE_HOME "$HOME/.cache"
 set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
+set -gx XDG_RUNTIME_HOME "/run/user/$UID"
+set -gx XDG_DATA_DIRS /usr/local/share:/usr/share
+set -gx XDG_CONFIG_DIRS /etc/xdg
 
 # pnpm
 if command -sq pnpm
@@ -55,7 +58,7 @@ set -gx EDITOR nvim
 set -gx QQ_FIX_MAC 1
 
 set -gx JAVA_HOME (readlink -f /usr/bin/java | string replace "/bin/java" "")
-set -gx _JAVA_OPTIONS "-Dlanguageserver.boot.symbolCacheDir=$XDG_CACHE_HOME/sts4/symbolCache"
+set -gx _JAVA_OPTIONS "-Dlanguageserver.boot.symbolCacheDir=$XDG_CACHE_HOME/sts4/symbolCache -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
 set -gx M2_HOME /usr/share/java/maven
 set -gx KOTLIN_HOME /usr/share/kotlin
 set -gx GOPATH "$XDG_DATA_HOME/go"
@@ -72,10 +75,9 @@ set -gx GOBIN "$GOPATH/bin"
 set -gx REDISCLI_HISTFILE "$XDG_DATA_HOME/redis/rediscli_history"
 set -gx REDISCLI_RCFILE "$XDG_CONFIG_HOME/redis/redisclirc"
 
-# Game
-# set -gx RADV_PERFTEST gpl
-# set -gx SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS 0
-# set -gx SDL_VIDEODRIVER wayland
+# cuda
+set -Ux PATH /opt/cuda/bin $PATH
+set -Ux LD_LIBRARY_PATH /opt/cuda/lib64 $LD_LIBRARY_PATH
 
 prepend_path "$HOME/.local/bin"
 prepend_path "$GOBIN"
