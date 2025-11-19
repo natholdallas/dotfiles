@@ -64,14 +64,6 @@ set -gx KOTLIN_HOME /usr/share/kotlin
 set -gx GOPATH "$XDG_DATA_HOME/go"
 set -gx GOBIN "$GOPATH/bin"
 
-# set -gx GTK_IM_MODULE fcitx
-# set -gx QT_IM_MODULE fcitx
-# set -gx QT4_IM_MODULE fcitx
-# set -gx XMODIFIERS @im=fcitx
-# set -gx SDL_IM_MODULE fcitx
-# set -gx INPUT_METHOD fcitx
-# set -gx GLFW_IM_MODULE ibus
-
 set -gx REDISCLI_HISTFILE "$XDG_DATA_HOME/redis/rediscli_history"
 set -gx REDISCLI_RCFILE "$XDG_CONFIG_HOME/redis/redisclirc"
 
