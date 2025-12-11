@@ -24,9 +24,19 @@ if command -sq pnpm
     prepend_path "$PNPM_HOME"
 end
 
+# npm
 if command -sq npm
     set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
     prepend_path "$XDG_DATA_HOME/npm/bin"
+end
+
+# postgres sql
+if command -sq postgres
+    set -gx PSQLRC "$XDG_CONFIG_HOME/pg/psqlrc"
+    set -gx PSQL_HISTORY "$XDG_STATE_HOME/psql_history"
+    set -gx PGPASSFILE "$XDG_CONFIG_HOME/pg/pgpass"
+    set -gx PGSERVICEFILE "$XDG_CONFIG_HOME/pg/pg_service.conf"
+    mkdir "$XDG_CONFIG_HOME/pg" && mkdir "$XDG_STATE_HOME"
 end
 
 # XDG FIX
