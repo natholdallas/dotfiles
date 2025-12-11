@@ -37,10 +37,12 @@ set -gx __GL_SHADER_DISK_CACHE_PATH "$XDG_CACHE_HOME/nv"
 set -gx WECHAT_DATA_DIR "$XDG_DATA_HOME/wechat"
 set -gx W3M_DIR "$XDG_STATE_HOME/w3m"
 set -gx WGETRC "$XDG_CONFIG_HOME/wgetrc"
-
 set -gx GTK_RC_FILES "$XDG_CONFIG_HOME/gtk-1.0/gtkrc"
 set -gx GTK2_RC_FILES "$XDG_CONFIG_HOME/gtk-2.0/gtkrc"
 set -gx TS3_CONFIG_DIR "$XDG_CONFIG_HOME/ts3client"
+set -gx TERM xterm-256color
+set -gx EDITOR nvim
+set -gx QQ_FIX_MAC 1
 
 set -gx NODE_REPL_HISTORY "$XDG_DATA_HOME/node_repl_history"
 set -gx DISCORD_USER_DATA_DIR "$XDG_DATA_HOME"
@@ -52,10 +54,6 @@ set -gx PYTHONUSERBASE "$XDG_DATA_HOME/python"
 set -gx MYSQL_HISTFILE "$XDG_STATE_HOME/mysql/history"
 set -gx SQLITE_HISTORY "$XDG_STATE_HOME/sqlite/history"
 set -gx PYTHON_HISTORY "$XDG_STATE_HOME/python/history"
-
-set -gx TERM xterm-256color
-set -gx EDITOR nvim
-set -gx QQ_FIX_MAC 1
 
 set -gx JAVA_HOME (readlink -f /usr/bin/java | string replace "/bin/java" "")
 set -gx _JAVA_OPTIONS "-Dlanguageserver.boot.symbolCacheDir=$XDG_CACHE_HOME/sts4/symbolCache -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"

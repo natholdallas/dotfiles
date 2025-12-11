@@ -47,6 +47,5 @@ fi
 echo "Backup folder in $backup"
 
 # Fixes
-
-# rm "$config/yazi/keymap.toml-*"
-# rm "$config/yazi/yazi.toml-*"
+rm $config/yazi/keymap.toml-*
+rm $config/yazi/yazi.toml-*

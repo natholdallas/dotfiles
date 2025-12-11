@@ -1,9 +1,9 @@
 if command -sq exa
     alias ls='exa --icons --sort type'
-    alias lsa='exa -A --icons --sort type'
     alias ll='exa -Alh --icons --sort type'
     alias la='exa -Alh --icons --sort type'
     alias lt='exa -lTah --icons --sort type'
+    alias lsa='exa -A --icons --sort type'
 else
     alias ls='ls --color=auto'
     alias lsa='ls -A'
