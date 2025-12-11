@@ -51,8 +51,11 @@ return {
       lemminx = { settings = { xml = { server = { workDir = "~/.cache/lemminx" } } } },
       volar = {
         settings = {
-          disableFormatting = true,
           vue = {
+            suggest = {
+              componentNameCasing = "alwaysPascalCase",
+              propNameCasing = "alwaysKebabCase",
+            },
             inlayHints = {
               destructuredProps = true,
               inlineHandlerLeading = true,
@@ -60,26 +63,44 @@ return {
               optionsWrapper = true,
               vBindShorthand = true,
             },
-            complete = {
-              casing = {
-                tags = "pascal",
-                props = "kebab",
-              },
-            },
-            disableFormatting = true,
-            doctor = { status = false },
-            trace = { server = "off" },
           },
-          -- features = {
-          --   defaultTagNameCase = "kebab-case",
-          --   defaultAttrNameCase = "kebab-case",
-          -- },
         },
       },
       vtsls = {
+        on_attach = function(client, bufnr)
+          -- 1. 獲取當前緩衝區的 filetype
+          local filetype = vim.bo[bufnr].filetype
+
+          -- 2. 核心邏輯：調整 semanticTokensProvider 能力
+
+          -- 檢查伺服器是否提供了 semanticTokensProvider 能力
+          if client.server_capabilities.semanticTokensProvider then
+            -- 檢查該能力是否提供了 'full' 支援
+            if client.server_capabilities.semanticTokensProvider.full ~= nil then
+              -- 根據 filetype 調整該能力
+              if filetype == "vue" then
+                -- 在 Vue 檔案中，禁用完整的語義標記，使用 vue_ls 提供的自定義實現
+                client.server_capabilities.semanticTokensProvider.full = false
+              else
+                -- 在非 Vue 檔案中（如 .js/.ts），保持啟用或明確設定為 true
+                client.server_capabilities.semanticTokensProvider.full = true
+              end
+            end
+          end
+
+          -- 3. 設定自定義組件的高亮群組 (如果需要舊行為)
+          -- 確保在所有需要高亮的地方執行一次
+          vim.cmd [[ highlight link @lsp.type.component @type]]
+
+          -- 4. 其他 LSP 設置，如鍵盤映射等
+          -- ...
+        end,
         settings = {
           typescript = {
             -- locale = "zh-CN",
+            format = {
+              enable = false,
+            },
             tsserver = { enableTracing = false },
             inlayHints = {
               functionLikeReturnTypes = { enabled = true },

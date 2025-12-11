@@ -28,12 +28,6 @@ return {
   --   },
   -- },
 
-  -- {
-  --   "DaikyXendo/nvim-material-icon",
-  --   opts = {
-  --     default = true,
-  --   },
-  -- },
   {
     "Comment.nvim",
     enabled = true,
@@ -74,20 +68,8 @@ return {
     opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
       "lua",
       "vim",
+      "regex",
       -- add more arguments for adding more treesitter parsers
     })
   end,
-
-  -- LuaSnip
-  -- {
-  --   "L3MON4D3/LuaSnip",
-  --   config = function(plugin, opts)
-  --     -- include the default astronvim config that calls the setup call
-  --     require "astronvim.plugins.configs.luasnip" (plugin, opts)
-  --     -- load snippets paths
-  --     require("luasnip.loaders.from_vscode").lazy_load {
-  --       paths = { vim.fn.stdpath "config" .. "/snippets" },
-  --     }
-  --   end,
-  -- }
 }

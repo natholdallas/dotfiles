@@ -49,14 +49,6 @@ return {
       n = {
         ["L"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["H"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
-        ["<F2>"] = { function() vim.lsp.buf.rename() end, desc = "LSP rename" },
-        ["<F12>"] = { function() vim.lsp.buf.definition() end, desc = "LSP search definition" },
-        ["gr"] = { function() vim.lsp.buf.references() end, desc = "LSP search references" },
-        ["\\"] = "<Nop>",
-        ["gb"] = "<Nop>",
-        ["gc"] = "<Nop>",
-        ["ys"] = "<Nop>",
-        ["yS"] = "<Nop>",
         ["<Leader>O"] = {
           function()
             vim.lsp.buf.code_action {
