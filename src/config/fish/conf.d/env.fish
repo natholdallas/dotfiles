@@ -58,7 +58,10 @@ set -gx PYTHON_HISTORY "$XDG_STATE_HOME/python/history"
 set -gx JAVA_HOME (readlink -f /usr/bin/java | string replace "/bin/java" "")
 set -gx _JAVA_OPTIONS "-Dlanguageserver.boot.symbolCacheDir=$XDG_CACHE_HOME/sts4/symbolCache -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
 set -gx M2_HOME /usr/share/java/maven
+set -gx MAVEN_OPTS "-Dmaven.repo.local="$XDG_DATA_HOME"/maven/repository"
+set -gx MAVEN_ARGS "--settings $XDG_CONFIG_HOME/maven/settings.xml"
 set -gx KOTLIN_HOME /usr/share/kotlin
+
 set -gx GOPATH "$XDG_DATA_HOME/go"
 set -gx GOBIN "$GOPATH/bin"
 

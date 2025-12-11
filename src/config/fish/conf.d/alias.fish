@@ -50,4 +50,8 @@ if command -sq wget
     alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 end
 
+if command -sq mvn
+    alias mvn="mvn -gs "$XDG_CONFIG_HOME"/maven/settings.xml"
+end
+
 alias rm="rm -vr"
