@@ -36,7 +36,6 @@ if command -sq postgres
     set -gx PSQL_HISTORY "$XDG_STATE_HOME/psql_history"
     set -gx PGPASSFILE "$XDG_CONFIG_HOME/pg/pgpass"
     set -gx PGSERVICEFILE "$XDG_CONFIG_HOME/pg/pg_service.conf"
-    mkdir "$XDG_CONFIG_HOME/pg" && mkdir "$XDG_STATE_HOME"
 end
 
 # XDG FIX
