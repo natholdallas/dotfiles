@@ -1,4 +1,7 @@
 function po
+    if not set -q argv[1]
+        set argv[1] v2raya
+    end
     switch $argv[1]
         case clash clash_verge
             set -gx http_proxy 'http://127.0.0.1:7890'
