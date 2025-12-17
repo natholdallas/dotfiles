@@ -38,7 +38,20 @@ if command -sq postgres
     set -gx PGSERVICEFILE "$XDG_CONFIG_HOME/pg/pg_service.conf"
 end
 
-# XDG FIX
+# fcitx 5
+if test "$XDG_SESSION_TYPE" != wayland
+    set -gx GTK_IM_MODULE fcitx
+else
+    if test "$XDG_SESSION_DESKTOP" != KDE
+        set -gx QT_IM_MODULE fcitx
+    end
+end
+set -gx XMODIFIERS @im=fcitx
+set -gx SDL_IM_MODULE fcitx
+set -gx INPUT_METHOD fcitx
+set -gx GLFW_IM_MODULE ibus
+
+# xdg
 set -gx ANDROID_USER_HOME "$XDG_DATA_HOME/android"
 set -gx CUDA_CACHE_PATH "$XDG_CACHE_HOME/nv"
 set -gx PYTHONPYCACHEPREFIX "$XDG_CACHE_HOME/python"
@@ -53,6 +66,10 @@ set -gx TERM xterm-256color
 set -gx EDITOR nvim
 set -gx QQ_FIX_MAC 1
 
+# cuda
+set -Ux PATH /opt/cuda/bin $PATH
+set -Ux LD_LIBRARY_PATH /opt/cuda/lib64 $LD_LIBRARY_PATH
+
 set -gx NODE_REPL_HISTORY "$XDG_DATA_HOME/node_repl_history"
 set -gx DISCORD_USER_DATA_DIR "$XDG_DATA_HOME"
 set -gx GNUPGHOME "$XDG_DATA_HOME/gnupg"
@@ -60,6 +77,7 @@ set -gx GRADLE_USER_HOME "$XDG_DATA_HOME/gradle"
 set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
 set -gx PYTHONUSERBASE "$XDG_DATA_HOME/python"
 
+set -gx HISTFILE "$XDG_STATE_HOME/bash/history"
 set -gx MYSQL_HISTFILE "$XDG_STATE_HOME/mysql/history"
 set -gx SQLITE_HISTORY "$XDG_STATE_HOME/sqlite/history"
 set -gx PYTHON_HISTORY "$XDG_STATE_HOME/python/history"
@@ -74,12 +92,10 @@ set -gx KOTLIN_HOME /usr/share/kotlin
 set -gx GOPATH "$XDG_DATA_HOME/go"
 set -gx GOBIN "$GOPATH/bin"
 
+set -gx RUSTUP_HOME "$XDG_DATA_HOME/rustup"
+
 set -gx REDISCLI_HISTFILE "$XDG_DATA_HOME/redis/rediscli_history"
 set -gx REDISCLI_RCFILE "$XDG_CONFIG_HOME/redis/redisclirc"
-
-# cuda
-set -Ux PATH /opt/cuda/bin $PATH
-set -Ux LD_LIBRARY_PATH /opt/cuda/lib64 $LD_LIBRARY_PATH
 
 prepend_path "$HOME/.local/bin"
 prepend_path "$GOBIN"

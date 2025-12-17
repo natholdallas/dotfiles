@@ -1,0 +1,7 @@
+#!/usr/bin/bash
+
+export DOTFILES="${DOTFILES:-$HOME/.config/dotfiles}"
+
+confd_dirs=("$DOTFILES/data/config/bash/conf.d/login" "$DOTFILES/data/user/bash/conf.d/login")
+
+. "$DOTFILES/data/config/bash/bashrc"
