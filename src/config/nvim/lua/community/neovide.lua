@@ -9,7 +9,7 @@ return {
       options = {
         opt = {
           -- guifont = "CodeNewRoman Nerd Font,Noto Color Emoji:#h-none",
-          guifont = "CodeNewRoman Nerd Font,Noto Color Emoji:h16",
+          guifont = "Monaco Nerd Font,Noto Color Emoji:#h-none",
         },
         g = {
           neovide_hide_mouse_when_typing = true,
