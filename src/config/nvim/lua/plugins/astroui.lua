@@ -34,6 +34,7 @@ return {
       LSPLoading10 = "⠏",
     },
   },
+
   {
     "Mofiqul/vscode.nvim",
     opts = {

@@ -36,7 +36,7 @@ if [ "$1" = "--backup" ]; then
   /bin/cp -rf "$config/yazi" $backup_config
   /bin/cp -rf "$config/mimeapps.list" $backup_config
   /bin/cp -rf "$config/starship.toml" $backup_config
-  echo "Backup folder in $backup"
+  echo "backup folder in $backup"
 fi
 
 # Copy

@@ -51,7 +51,6 @@ set -gx SDL_IM_MODULE fcitx
 set -gx INPUT_METHOD fcitx
 set -gx GLFW_IM_MODULE ibus
 
-# xdg
 set -gx ANDROID_USER_HOME "$XDG_DATA_HOME/android"
 set -gx CUDA_CACHE_PATH "$XDG_CACHE_HOME/nv"
 set -gx PYTHONPYCACHEPREFIX "$XDG_CACHE_HOME/python"
@@ -96,6 +95,8 @@ set -gx RUSTUP_HOME "$XDG_DATA_HOME/rustup"
 
 set -gx REDISCLI_HISTFILE "$XDG_DATA_HOME/redis/rediscli_history"
 set -gx REDISCLI_RCFILE "$XDG_CONFIG_HOME/redis/redisclirc"
+
+set -gx DOTNET_CLI_HOME "$XDG_DATA_HOME/dotnet"
 
 prepend_path "$HOME/.local/bin"
 prepend_path "$GOBIN"

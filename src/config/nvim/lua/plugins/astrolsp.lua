@@ -15,6 +15,7 @@ return {
       inlay_hints = false, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
     },
+
     -- customize lsp formatting options
     formatting = {
       -- control auto formatting on save
@@ -38,17 +39,22 @@ return {
       --   return true
       -- end
     },
+
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
     },
+
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
+
       gopls = {
         analyses = {},
       },
+
       lemminx = { settings = { xml = { server = { workDir = "~/.cache/lemminx" } } } },
+
       volar = {
         settings = {
           vue = {
@@ -66,6 +72,7 @@ return {
           },
         },
       },
+
       vtsls = {
         on_attach = function(client, bufnr)
           -- 1. 獲取當前緩衝區的 filetype
@@ -91,10 +98,8 @@ return {
           -- 3. 設定自定義組件的高亮群組 (如果需要舊行為)
           -- 確保在所有需要高亮的地方執行一次
           vim.cmd [[ highlight link @lsp.type.component @type]]
-
-          -- 4. 其他 LSP 設置，如鍵盤映射等
-          -- ...
         end,
+
         settings = {
           typescript = {
             -- locale = "zh-CN",
@@ -114,6 +119,7 @@ return {
         },
       },
     },
+
     -- customize how language servers are attached
     handlers = {
       -- a function without a key is simply the default handler, functions take two parameters, the server name and the configured options table for that server
@@ -123,6 +129,7 @@ return {
       -- rust_analyzer = false, -- setting a handler to false will disable the set up of that language server
       -- pyright = function(_, opts) require("lspconfig").pyright.setup(opts) end -- or a custom handler function can be passed
     },
+
     -- Configure buffer local auto commands to add when attaching a language server
     autocmds = {
       -- first key is the `augroup` to add the auto commands to (:h augroup)
@@ -148,6 +155,7 @@ return {
         },
       },
     },
+
     -- mappings to be set up on attaching of a language server
     mappings = {
       n = {
@@ -165,6 +173,7 @@ return {
         -- },
       },
     },
+
     -- A custom `on_attach` function to be run after the default `on_attach` function
     -- takes two parameters `client` and `bufnr`  (`:h lspconfig-setup`)
     on_attach = function()
