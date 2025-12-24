@@ -1,3 +1,0 @@
-#! /usr/bin/bash
-
-fakehome /opt/zen-browser-bin/zen-bin "$@"

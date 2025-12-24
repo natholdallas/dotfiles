@@ -10,7 +10,7 @@ link_home_file() {
 	fi
 }
 
-# Remove all dead links if not link to fake_home$
+# Remove all dead links if not link to $fake_home
 for file in "$fake_home"/{*,.*}; do
 	[[ -L "$file" ]] || continue
 	if [[ $(readlink "$file") != "$fake_home"/* ]] && [[ ! -e "$file" ]]; then
@@ -18,7 +18,7 @@ for file in "$fake_home"/{*,.*}; do
 	fi
 done
 
-# Link all files in $HOME to fake_home$
+# Link all files in $HOME to $fake_home
 for file in "$HOME"/{*,.*}; do
 	link_home_file "$file"
 done
