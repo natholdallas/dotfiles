@@ -8,12 +8,19 @@ return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
+    styles = {
+      italic = false,
+    },
     -- change colorscheme
     colorscheme = "astrotheme",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
-        -- Normal = { bg = "#0F1011" },
+        {
+          Comment = { italic = false },
+          ["@comment"] = { italic = false },
+          ["@keyword"] = { italic = false },
+        },
       },
       astrotheme = { -- a table of overrides/changes when applying the astrotheme theme
         -- Normal = { bg = "#0F1011" },

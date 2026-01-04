@@ -54,4 +54,14 @@ if command -sq mvn
     alias mvn="mvn -gs "$XDG_CONFIG_HOME"/maven/settings.xml"
 end
 
-alias rm="rm -vr"
+if command -sq curl
+    alias whatsip="curl ipinfo.io/ip"
+end
+
+if command -sq rm
+    alias rm="rm -vr"
+end
+
+if command -sq nvidia-settings
+    alias nvidia-settings="nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings"
+end

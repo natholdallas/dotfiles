@@ -60,6 +60,10 @@ return {
           desc = "Organize Imports",
         },
       },
+      x = {
+        -- 选中一段词后粘贴，不覆盖剪贴板
+        ["p"] = { [["_dP]], desc = "Paste without overwriting reg" },
+      },
     },
   },
 }
