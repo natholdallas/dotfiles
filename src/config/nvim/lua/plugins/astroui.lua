@@ -8,9 +8,7 @@ return {
   "AstroNvim/astroui",
   ---@type AstroUIOpts
   opts = {
-    styles = {
-      italic = false,
-    },
+    styles = { italic = false },
     -- change colorscheme
     colorscheme = "astrotheme",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes

@@ -9,5 +9,4 @@ ya pkg add uhs-robert/recycle-bin
 
 # theme
 ya pkg add 956MB/vscode-dark-modern
-ya pkg add gosxrgxx/flexoki-dark
 ya pkg add yazi-rs/flavors:catppuccin-mocha

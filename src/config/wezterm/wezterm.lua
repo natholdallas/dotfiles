@@ -11,7 +11,7 @@ return {
 	color_scheme = "Seti",
 	xcursor_theme = "Bibata-Modern-Ice",
 	allow_square_glyphs_to_overflow_width = "WhenFollowedBySpace",
-	enable_wayland = false,
+	enable_wayland = true,
 	default_cursor_style = "SteadyBar",
 	window_padding = {
 		left = 16,
