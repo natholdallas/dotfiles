@@ -26,12 +26,16 @@ fi
 
 # Backup
 if [ "$1" = "--backup" ]; then
+  /bin/cp -rf "$config/Code" $backup_config
+  /bin/cp -rf "$config/JetBrains" $backup_config
+  /bin/cp -rf "$config/Kvantum" $backup_config
   /bin/cp -rf "$config/MangoHud" $backup_config
   /bin/cp -rf "$config/fastfetch" $backup_config
   /bin/cp -rf "$config/fcitx5" $backup_config
   /bin/cp -rf "$config/fish" $backup_config
   /bin/cp -rf "$config/fontconfig" $backup_config
   /bin/cp -rf "$config/kitty" $backup_config
+  /bin/cp -rf "$config/maven" $backup_config
   /bin/cp -rf "$config/mpv" $backup_config
   /bin/cp -rf "$config/neovide" $backup_config
   /bin/cp -rf "$config/npm" $backup_config

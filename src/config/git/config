@@ -1,9 +1,0 @@
-[user]
-	name = TestUser 
-	email = xxx@xx.com
-[init]
-	defaultBranch = main
-[core]
-	autocrlf = input
-[pull]
-	rebase = false
