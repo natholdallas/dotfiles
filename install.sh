@@ -5,6 +5,7 @@ config=~/.config
 local=~/.local
 
 # backup folder
+ssh=~/.ssh
 backup="$local/share/dotfiles-backup"
 backup_config="$backup/config"
 # backup_local=$backup/local
@@ -18,6 +19,9 @@ fi
 
 if [[ ! -d $local ]]; then
   mkdir -p $local
+  mkdir -p $local/bin
+  mkdir -p $local/share
+  mkdir -p $local/state
 fi
 
 # Backup
@@ -39,6 +43,7 @@ if [ "$1" = "--backup" ]; then
 fi
 
 # Copy
+/bin/cp -rf src/ssh/* $ssh
 /bin/cp -rf src/config/* $config
 /bin/cp -rf src/local/* $local
 

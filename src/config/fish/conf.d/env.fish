@@ -38,6 +38,10 @@ if command -sq postgres
     set -gx PGSERVICEFILE "$XDG_CONFIG_HOME/pg/pg_service.conf"
 end
 
+# desktop
+
+set -gx GTK_USE_PORTAL 1
+
 # fcitx 5
 if test "$XDG_SESSION_TYPE" != wayland
     set -gx GTK_IM_MODULE fcitx
@@ -50,6 +54,7 @@ set -gx XMODIFIERS @im=fcitx
 set -gx SDL_IM_MODULE fcitx
 set -gx INPUT_METHOD fcitx
 set -gx GLFW_IM_MODULE ibus
+set -gx QT_WAYLAND_TEXT_INPUT_PROTOCOL zwp_text_input_v1
 
 set -gx ANDROID_USER_HOME "$XDG_DATA_HOME/android"
 set -gx CUDA_CACHE_PATH "$XDG_CACHE_HOME/nv"

@@ -1,26 +1,21 @@
 {
   "chat.commandCenter.enabled": false,
-  "http.proxy": "http://127.0.0.1:20172",
   "window.commandCenter": false,
   "window.customTitleBarVisibility": "auto",
   "window.zoomLevel": 1,
   "window.titleBarStyle": "custom",
-  "workbench.activityBar.location": "hidden",
   "workbench.iconTheme": "symbols",
   "workbench.startupEditor": "none",
   "workbench.list.smoothScrolling": true,
   "workbench.tree.renderIndentGuides": "none",
   "workbench.editor.tabSizing": "fixed",
-  "files.exclude": {
-    "**/.nuxt": true,
-    "**/node_modules": true
-  },
+  "workbench.activityBar.location": "top",
   "terminal.integrated.fontFamily": "Monaco Nerd Font", // ? Font
   "terminal.integrated.cursorStyle": "line",
   "terminal.integrated.tabs.defaultIcon": "new-file",
   "terminal.integrated.defaultProfile.windows": "PowerShell",
   "terminal.integrated.smoothScrolling": true,
-  "editor.accessibilitySupport": "on",
+  "editor.accessibilitySupport": "off",
   "editor.fontFamily": "Monaco Nerd Font Mono", // ? Font
   "editor.fontSize": 14,
   "editor.lineHeight": 1.7,
@@ -56,8 +51,6 @@
   "Lua.workspace.maxPreload": 100000,
   "Lua.diagnostics.libraryFiles": "Disable",
   "Lua.workspace.library": [],
-  // Vue
-  "vue.server.hybridMode": true,
   // Typescript
   "typescript.updateImportsOnFileMove.enabled": "always",
   // XML
@@ -65,21 +58,6 @@
   "xml.server.workDir": "~/.cache/lemminx",
   // CSS
   "css.lint.unknownAtRules": "ignore",
-  // Apc
-  // "apc.font.family": "Monaco Nerd Font",
-  // "apc.imports": [
-  //   "file://${userHome}/.vscode/extensions/brandonkirbyson.vscode-animations-2.0.3/dist/updateHandler.js"
-  // ],
-  // Animation
-  // "animations.Enabled": true,
-  // "animations.Smooth-Mode": true,
-  // "animations.CursorAnimation": true,
-  // "animations.Tabs": "Flip",
-  // "animations.Active": "Scale",
-  // "animations.Scrolling": "Scale",
-  // "animations.Command-Palette": "Fade",
-  // "animations.Focus-Dimming-Mode": "None",
-  // "animations.Install-Method": "Apc Customize UI++",
   // Other
   "projectManager.sortList": "Saved",
   "symbols.hidesExplorerArrows": true,
@@ -115,6 +93,9 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
   },
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",

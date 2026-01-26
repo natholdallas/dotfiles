@@ -20,9 +20,13 @@ paru -S zip unzip fish neovide neovim zoxide yazi mpv fastfetch starship kitty g
 
 ## Installation
 
-| name       | description                                          |
-| ---------- | ---------------------------------------------------- |
-| install.sh | Backup origin config then copy dotfiles to ~/.config |
+| name                 | description                                          |
+| -------------------- | ---------------------------------------------------- |
+| install.sh           | Backup origin config then copy dotfiles to ~/.config |
+| scripts/aur.sh       | Install some package from aur                        |
+| scripts/pacman.sh    | Install some package from pacman                     |
+| scripts/sudo-rs.sh   | sudo-rs package file linker                          |
+| scripts/spicetify.sh | spicetify config marketplace                         |
 
 ## Yazi
 
