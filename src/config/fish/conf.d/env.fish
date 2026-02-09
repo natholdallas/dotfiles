@@ -56,10 +56,9 @@ set -gx INPUT_METHOD fcitx
 set -gx GLFW_IM_MODULE ibus
 set -gx QT_WAYLAND_TEXT_INPUT_PROTOCOL zwp_text_input_v1
 
+# etc
 set -gx ANDROID_USER_HOME "$XDG_DATA_HOME/android"
-set -gx CUDA_CACHE_PATH "$XDG_CACHE_HOME/nv"
 set -gx PYTHONPYCACHEPREFIX "$XDG_CACHE_HOME/python"
-set -gx __GL_SHADER_DISK_CACHE_PATH "$XDG_CACHE_HOME/nv"
 set -gx WECHAT_DATA_DIR "$XDG_DATA_HOME/wechat"
 set -gx W3M_DIR "$XDG_STATE_HOME/w3m"
 set -gx WGETRC "$XDG_CONFIG_HOME/wgetrc"
@@ -69,39 +68,63 @@ set -gx TS3_CONFIG_DIR "$XDG_CONFIG_HOME/ts3client"
 set -gx TERM xterm-256color
 set -gx EDITOR nvim
 set -gx QQ_FIX_MAC 1
-
-# cuda
-set -Ux PATH /opt/cuda/bin $PATH
-set -Ux LD_LIBRARY_PATH /opt/cuda/lib64 $LD_LIBRARY_PATH
-
-set -gx NODE_REPL_HISTORY "$XDG_DATA_HOME/node_repl_history"
 set -gx DISCORD_USER_DATA_DIR "$XDG_DATA_HOME"
 set -gx GNUPGHOME "$XDG_DATA_HOME/gnupg"
-set -gx GRADLE_USER_HOME "$XDG_DATA_HOME/gradle"
 set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
 set -gx PYTHONUSERBASE "$XDG_DATA_HOME/python"
 
+# cuda
+set -Ux PATH /opt/cuda/bin $PATH
+set -gx CUDA_CACHE_PATH "$XDG_CACHE_HOME/nv"
+set -Ux LD_LIBRARY_PATH /opt/cuda/lib64 $LD_LIBRARY_PATH
+
+# node
+set -gx NODE_REPL_HISTORY "$XDG_DATA_HOME/node_repl_history"
+
+# history
 set -gx HISTFILE "$XDG_STATE_HOME/bash/history"
 set -gx MYSQL_HISTFILE "$XDG_STATE_HOME/mysql/history"
 set -gx SQLITE_HISTORY "$XDG_STATE_HOME/sqlite/history"
 set -gx PYTHON_HISTORY "$XDG_STATE_HOME/python/history"
 
+# java
 set -gx JAVA_HOME (readlink -f /usr/bin/java | string replace "/bin/java" "")
 set -gx _JAVA_OPTIONS "-Dlanguageserver.boot.symbolCacheDir=$XDG_CACHE_HOME/sts4/symbolCache -Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
 set -gx M2_HOME /usr/share/java/maven
 set -gx MAVEN_OPTS "-Dmaven.repo.local="$XDG_DATA_HOME"/maven/repository"
 set -gx MAVEN_ARGS "--settings $XDG_CONFIG_HOME/maven/settings.xml"
 set -gx KOTLIN_HOME /usr/share/kotlin
+set -gx GRADLE_USER_HOME "$XDG_DATA_HOME/gradle"
 
+# go
 set -gx GOPATH "$XDG_DATA_HOME/go"
 set -gx GOBIN "$GOPATH/bin"
 
+# rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME/rustup"
 
+# redis
 set -gx REDISCLI_HISTFILE "$XDG_DATA_HOME/redis/rediscli_history"
 set -gx REDISCLI_RCFILE "$XDG_CONFIG_HOME/redis/redisclirc"
 
+# dotnet
 set -gx DOTNET_CLI_HOME "$XDG_DATA_HOME/dotnet"
+
+# 优化着色器缓存：禁止自动清理，防止游戏重复加载卡顿
+set -gx __GL_SHADER_DISK_CACHE_SKIP_CLEANUP 1
+# 增加着色器缓存上限 (单位为字节，这里设为约 4GB)
+set -gx __GL_SHADER_DISK_CACHE_SIZE 4294967296
+# 开启多线程着色器编译，提升 OpenGL 游戏性能
+set -gx __GL_THREADED_OPTIMIZATIONS 1
+# 针对 KDE 用户的 DRM 优化
+set -gx KWIN_DRM_NO_AMS 1
+# 极度降低输入延迟（类似超低延迟模式）
+set -gx __GL_MaxFramesAllowed 1
+# 开启 Vulkan 的显存分配优化 (配合 Alder Lake CPU 效果更好)
+set -gx VK_ICD_FILENAMES /usr/share/vulkan/icd.d/nvidia_icd.json
+set -gx __GL_SHADER_DISK_CACHE_PATH "$XDG_CACHE_HOME/nv"
+set -gx __GL_SYNC_TO_VBLANK 0
+set -gx __GL_GSYNC_ALLOWED 0
 
 prepend_path "$HOME/.local/bin"
 prepend_path "$GOBIN"

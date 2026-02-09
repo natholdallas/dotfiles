@@ -44,7 +44,7 @@ echo "Install Appearance Package"
 paru -S bibata-cursor-theme-bin
 
 echo "Install Fonts"
-paru -S ttf-annotation-mono ttf-ligaconsolas-nerd-font ttf-monaco ttf-pingfang-git
+paru -S ttf-annotation-mono ttf-ligaconsolas-nerd-font ttf-monaco ttf-pingfang-git ttf-firacode-nerd otf-codenewroman-nerd otf-comicshanns-nerd
 
 echo "Install Android Emulator"
 paru -S waydroid waydroid-helper

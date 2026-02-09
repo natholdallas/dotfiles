@@ -1,18 +1,15 @@
 #!/usr/bin/bash
 
-# user folder
 config=~/.config
 local=~/.local
-
-# backup folder
 ssh=~/.ssh
 backup="$local/share/dotfiles-backup"
-backup_config="$backup/config"
-# backup_local=$backup/local
+bconfig="$backup/config"
+blocal=$backup/local
 
 # Make dirs
 if [[ ! -d $backup ]]; then
-  mkdir -p "$backup/config" "$backup/local/bin" "$backup/local/share"
+  mkdir -p "$backup/config" "$blocal/bin" "$blocal/share"
 elif [[ ! -z "$(ls -A $backup)" ]]; then
   rm -rf $backup/config/*
 fi
@@ -22,27 +19,31 @@ if [[ ! -d $local ]]; then
   mkdir -p $local/bin
   mkdir -p $local/share
   mkdir -p $local/state
+  mkdir -p $local/share/gnupg
 fi
 
 # Backup
 if [ "$1" = "--backup" ]; then
-  /bin/cp -rf "$config/Code" $backup_config
-  /bin/cp -rf "$config/JetBrains" $backup_config
-  /bin/cp -rf "$config/Kvantum" $backup_config
-  /bin/cp -rf "$config/MangoHud" $backup_config
-  /bin/cp -rf "$config/fastfetch" $backup_config
-  /bin/cp -rf "$config/fcitx5" $backup_config
-  /bin/cp -rf "$config/fish" $backup_config
-  /bin/cp -rf "$config/fontconfig" $backup_config
-  /bin/cp -rf "$config/kitty" $backup_config
-  /bin/cp -rf "$config/maven" $backup_config
-  /bin/cp -rf "$config/mpv" $backup_config
-  /bin/cp -rf "$config/neovide" $backup_config
-  /bin/cp -rf "$config/npm" $backup_config
-  /bin/cp -rf "$config/nvim" $backup_config
-  /bin/cp -rf "$config/wezterm" $backup_config
-  /bin/cp -rf "$config/yazi" $backup_config
-  /bin/cp -rf "$config/starship.toml" $backup_config
+  /bin/cp -rf "$config/Code" $bconfig
+  /bin/cp -rf "$config/JetBrains" $bconfig
+  /bin/cp -rf "$config/Kvantum" $bconfig
+  /bin/cp -rf "$config/MangoHud" $bconfig
+  /bin/cp -rf "$config/fastfetch" $bconfig
+  /bin/cp -rf "$config/fcitx5" $bconfig
+  /bin/cp -rf "$config/fish" $bconfig
+  /bin/cp -rf "$config/fontconfig" $bconfig
+  /bin/cp -rf "$config/kitty" $bconfig
+  /bin/cp -rf "$config/maven" $bconfig
+  /bin/cp -rf "$config/mpv" $bconfig
+  /bin/cp -rf "$config/neovide" $bconfig
+  /bin/cp -rf "$config/npm" $bconfig
+  /bin/cp -rf "$config/nvim" $bconfig
+  /bin/cp -rf "$config/wezterm" $bconfig
+  /bin/cp -rf "$config/yazi" $bconfig
+  /bin/cp -rf "$config/starship.toml" $bconfig
+  /bin/cp -rf "$local/bin" "$blocal/bin"
+  /bin/cp -rf "$local/share/applications" "$blocal/share/applications"
+  /bin/cp -rf "$local/share/fonts" "$blocal/share/fonts"
   echo "backup folder in $backup"
 fi
 
