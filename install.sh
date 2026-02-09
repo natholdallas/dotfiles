@@ -13,6 +13,12 @@ if [[ ! -d $backup ]]; then
 elif [[ ! -z "$(ls -A $backup)" ]]; then
   rm -rf $backup/config/*
 fi
+if [[ ! -d $ssh ]]; then
+  mkdir -p $ssh
+fi
+if [[ ! -d $config ]]; then
+  mkdir -p $config
+fi
 
 if [[ ! -d $local ]]; then
   mkdir -p $local
