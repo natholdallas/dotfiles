@@ -116,15 +116,6 @@ set -gx __GL_SHADER_DISK_CACHE_SKIP_CLEANUP 1
 set -gx __GL_SHADER_DISK_CACHE_SIZE 4294967296
 # 开启多线程着色器编译，提升 OpenGL 游戏性能
 set -gx __GL_THREADED_OPTIMIZATIONS 1
-# 针对 KDE 用户的 DRM 优化
-set -gx KWIN_DRM_NO_AMS 1
-# 极度降低输入延迟（类似超低延迟模式）
-set -gx __GL_MaxFramesAllowed 1
-# 开启 Vulkan 的显存分配优化 (配合 Alder Lake CPU 效果更好)
-set -gx VK_ICD_FILENAMES /usr/share/vulkan/icd.d/nvidia_icd.json
-set -gx __GL_SHADER_DISK_CACHE_PATH "$XDG_CACHE_HOME/nv"
-set -gx __GL_SYNC_TO_VBLANK 0
-set -gx __GL_GSYNC_ALLOWED 0
 
 prepend_path "$HOME/.local/bin"
 prepend_path "$GOBIN"
