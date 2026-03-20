@@ -49,16 +49,16 @@ return {
       n = {
         ["L"] = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         ["H"] = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
-        ["<Leader>O"] = {
-          function()
-            vim.lsp.buf.code_action {
-              ---@diagnostic disable-next-line: missing-fields
-              context = { only = { "source.organizeImports" } },
-              apply = true,
-            }
-          end,
-          desc = "Organize Imports",
-        },
+        -- ["O"] = {
+        --   function()
+        --     vim.lsp.buf.code_action {
+        --       ---@diagnostic disable-next-line: missing-fields
+        --       context = { only = { "source.organizeImports" } },
+        --       apply = true,
+        --     }
+        --   end,
+        --   desc = "Organize Imports",
+        -- },
       },
       x = {
         -- 选中一段词后粘贴，不覆盖剪贴板

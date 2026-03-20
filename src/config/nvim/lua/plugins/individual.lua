@@ -73,4 +73,21 @@ return {
       },
     },
   },
+
+  {
+    "Saghen/blink.cmp",
+    optional = true,
+    opts = function(_, opts)
+      -- opts.keymap["<C-f>"] = {
+      --   "snippet_forward",
+      --   function()
+      --     if vim.g.ai_accept then return vim.g.ai_accept() end
+      --   end,
+      --   "fallback",
+      -- }
+      -- opts.keymap["<C-F>"] = { "snippet_backward", "fallback" }
+      opts.keymap["<Tab>"] = { "select_next", "fallback" }
+      opts.keymap["<S-Tab>"] = { "select_prev", "fallback" }
+    end,
+  },
 }

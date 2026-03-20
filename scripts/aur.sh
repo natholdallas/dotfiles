@@ -48,3 +48,6 @@ paru -S ttf-annotation-mono ttf-ligaconsolas-nerd-font ttf-monaco ttf-pingfang-g
 
 echo "Install Android Emulator"
 paru -S waydroid waydroid-helper
+
+echo "Install Obs"
+paru -S obs-studio obs-pipewire-audio-capture-bin
