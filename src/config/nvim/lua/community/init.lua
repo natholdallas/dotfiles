@@ -17,10 +17,8 @@ return {
   { import = "astrocommunity.pack.html-css" },
   { import = "astrocommunity.pack.toml" },
 
-  -- AI 接入
-  { import = "astrocommunity.ai.opencode-nvim" },
-
-  -- 只有当系统安装了对应编译器/解释器时才加载的语言包
+  -- 只有当系统安装了对应编译器/解释器时才加载的拓展包
+  has "opencode" and { import = "astrocommunity.ai.opencode-nvim" } or nil,
   has "go" and { import = "astrocommunity.pack.go" } or nil,
   has "fish" and { import = "astrocommunity.pack.fish" } or nil,
   has "bash" and { import = "astrocommunity.pack.bash" } or nil,

@@ -50,7 +50,12 @@ return {
     config = {
 
       gopls = {
-        analyses = {},
+        settings = {
+          analyses = {
+            ST1000 = false,
+            missing_doc = false,
+          },
+        },
       },
 
       lemminx = { settings = { xml = { server = { workDir = "~/.cache/lemminx" } } } },

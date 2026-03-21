@@ -12,11 +12,6 @@ local function safe_require(name)
 	return mod
 end
 
-function Linemode:size_and_mtime()
-	local size = self._file:size()
-	return ui.Line(string.format("%s", size and ya.readable_size(size) or ""))
-end
-
 safe_require("full-border"):setup({
 	-- Available values: ui.Border.PLAIN, ui.Border.ROUNDED
 	type = ui.Border.ROUNDED,

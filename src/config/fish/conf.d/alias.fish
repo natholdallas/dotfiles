@@ -4,6 +4,12 @@ if command -sq exa
     alias la='exa -Alh --icons --sort type'
     alias lt='exa -lTah --icons --sort type'
     alias lsa='exa -A --icons --sort type'
+else if command -sq eza
+    alias ls='eza --icons --sort type'
+    alias ll='eza -Alh --icons --sort type'
+    alias la='eza -Alh --icons --sort type'
+    alias lt='eza -lTah --icons --sort type'
+    alias lsa='eza -A --icons --sort type'
 else
     alias ls='ls --color=auto'
     alias lsa='ls -A'
