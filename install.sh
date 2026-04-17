@@ -34,6 +34,7 @@ if [ "$1" = "--backup" ]; then
   /bin/cp -rf "$config/JetBrains" $bconfig
   /bin/cp -rf "$config/Kvantum" $bconfig
   /bin/cp -rf "$config/MangoHud" $bconfig
+  /bin/cp -rf "$config/atuin" $bconfig
   /bin/cp -rf "$config/fastfetch" $bconfig
   /bin/cp -rf "$config/fcitx5" $bconfig
   /bin/cp -rf "$config/fish" $bconfig

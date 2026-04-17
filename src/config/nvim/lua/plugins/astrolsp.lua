@@ -33,6 +33,9 @@ return {
         "lua_ls",
         "volar",
         "vtsls",
+        "vue_ls",
+        "emmet_ls",
+        "unocss",
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
@@ -48,17 +51,20 @@ return {
     -- customize language server configuration options passed to `lspconfig`
     ---@diagnostic disable: missing-fields
     config = {
+      lemminx = { settings = { xml = { server = { workDir = "~/.cache/lemminx" } } } },
 
       gopls = {
         settings = {
-          analyses = {
-            ST1000 = false,
-            missing_doc = false,
+          gopls = {
+            analyses = {
+              ST1000 = false,
+              ST1020 = false,
+              ST1022 = false,
+            },
+            staticcheck = true,
           },
         },
       },
-
-      lemminx = { settings = { xml = { server = { workDir = "~/.cache/lemminx" } } } },
 
       volar = {
         settings = {
@@ -77,7 +83,6 @@ return {
           },
         },
       },
-
       vtsls = {
         on_attach = function(client, bufnr)
           -- 1. 獲取當前緩衝區的 filetype

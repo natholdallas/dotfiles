@@ -110,5 +110,635 @@
     "*.db3": "${capture}.${extname}-*",
     "*.sdb": "${capture}.${extname}-*",
     "*.s3db": "${capture}.${extname}-*"
-  }
+  },
+  // ██╗   ██╗██╗███╗   ███╗
+  // ██║   ██║██║████╗ ████║
+  // ██║   ██║██║██╔████╔██║
+  // ╚██╗ ██╔╝██║██║╚██╔╝██║
+  //  ╚████╔╝ ██║██║ ╚═╝ ██║
+  //   ╚═══╝  ╚═╝╚═╝     ╚═╝
+  // "vim.timeout": 500,
+  "vim.enableNeovim": true,
+  "vim.easymotion": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.leader": "<space>",
+  "vim.hlsearch": true,
+  "vim.foldfix": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
+  "vim.highlightedyank.textColor": "white",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-x>": false,
+    "<C-z>": false,
+    "<C-h>": false,
+    "<C-l>": false,
+    "<C-k>": false,
+    "<C-f>": false,
+    "<C-j>": false,
+    "<C-b>": false,
+    "<C-t>": false,
+    "<C-p>": false,
+    "<C-q>": false
+  },
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // Vscode to Vim
+    {
+      "before": [
+        "<C-right>"
+      ],
+      "after": [
+        "e"
+      ]
+    },
+    // Vim basic
+    {
+      "before": [
+        "u"
+      ],
+      "commands": [
+        "undo"
+      ]
+    },
+    {
+      "before": [
+        "<C-r>"
+      ],
+      "commands": [
+        "redo"
+      ]
+    },
+    // AstroNvim basic
+    {
+      "before": [
+        "<Leader>",
+        "w"
+      ],
+      "names": [
+        "Go to Change...",
+        "Next Change"
+      ],
+      "commands": [
+        ":w"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "W"
+      ],
+      "commands": [
+        ":w!"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "c"
+      ],
+      "commands": [
+        ":q"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "C"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "q"
+      ],
+      "commands": [
+        "workbench.action.closeEditorsAndGroup"
+      ]
+    },
+    // Session
+    {
+      "before": [
+        "<Leader>",
+        "S",
+        "f"
+      ],
+      "commands": [
+        "projectManager.listProjects"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "S",
+        "F"
+      ],
+      "commands": [
+        "workbench.action.openRecent"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "S",
+        "s"
+      ],
+      "commands": [
+        "projectManager.saveProject"
+      ]
+    },
+    // Buffer
+    {
+      "before": [
+        "[",
+        "b"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ]
+    },
+    {
+      "before": [
+        "]",
+        "b"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ]
+    },
+    {
+      "before": [
+        "H"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ]
+    },
+    {
+      "before": [
+        "L"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ]
+    },
+    // Find
+    {
+      "before": [
+        "<Leader>",
+        "f",
+        "C"
+      ],
+      "commands": [
+        "workbench.action.showCommands"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "f",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "f",
+        "N"
+      ],
+      "commands": [
+        "notifications.showList"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "f",
+        "o"
+      ],
+      "commands": [
+        "workbench.action.openRecent"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "f",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.selectTheme"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "f",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.findInFiles"
+      ]
+    },
+    // git
+    {
+      "before": [
+        "<Leader>",
+        "g",
+        "g"
+      ],
+      "commands": [
+        "workbench.view.scm"
+      ]
+    },
+    // lsp
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "I"
+      ],
+      "commands": [
+        "editor.action.goToImplementation"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "d"
+      ],
+      "commands": [
+        "editor.action.revealDefinition"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "D"
+      ],
+      "commands": [
+        "editor.action.revealDeclaration"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        "editor.action.goToReferences"
+      ]
+    },
+    {
+      "before": [
+        "g",
+        "y"
+      ],
+      "commands": [
+        "editor.action.goToTypeDefinition"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "l",
+        "a"
+      ],
+      "commands": [
+        "editor.action.quickFix"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "l",
+        "A"
+      ],
+      "commands": [
+        "editor.action.codeAction"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "l",
+        "G"
+      ],
+      "commands": [
+        "workbench.action.showAllSymbols"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "l",
+        "R"
+      ],
+      "commands": [
+        "editor.action.goToReferences"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "l",
+        "r"
+      ],
+      "commands": [
+        "editor.action.rename"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "l",
+        "s"
+      ],
+      "commands": [
+        "workbench.action.gotoSymbol"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        "l",
+        "f"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    // flash.nvim
+    {
+      "before": [
+        "s"
+      ],
+      "after": [
+        "<Leader>",
+        "<Leader>",
+        "s"
+      ]
+    },
+    // Camel case motion
+    {
+      "before": [
+        ",",
+        "w"
+      ],
+      "after": [
+        "<Leader>",
+        "w"
+      ]
+    },
+    {
+      "before": [
+        ",",
+        "e"
+      ],
+      "after": [
+        "<Leader>",
+        "e"
+      ]
+    },
+    {
+      "before": [
+        ",",
+        "b"
+      ],
+      "after": [
+        "<Leader>",
+        "b"
+      ]
+    },
+    // Split
+    {
+      "before": [
+        "\\"
+      ],
+      "after": [
+        "<C-w>",
+        "s"
+      ]
+    },
+    {
+      "before": [
+        "|"
+      ],
+      "after": [
+        "<C-w>",
+        "v"
+      ]
+    },
+    // 取消高亮
+    {
+      "before": [
+        "<C-n>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    // 注释
+    {
+      "before": [
+        "<Leader>",
+        "/"
+      ],
+      "commands": [
+        "editor.action.commentLine"
+      ]
+    },
+    // Open settings
+    {
+      "before": [
+        "<Leader>",
+        ".",
+        "g"
+      ],
+      "commands": [
+        "workbench.action.openRawDefaultSettings"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        ".",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.openFolderSettingsFile"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        ".",
+        "r"
+      ],
+      "commands": [
+        "workbench.action.openRemoteSettingsFile"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        ".",
+        "u"
+      ],
+      "commands": [
+        "workbench.action.openSettingsJson"
+      ]
+    },
+    {
+      "before": [
+        "<Leader>",
+        ".",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.openWorkspaceSettingsFile"
+      ]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    // Motion
+    {
+      "before": [
+        "<left>"
+      ],
+      "commands": [
+        "cursorLeft"
+      ]
+    },
+    {
+      "before": [
+        "<right>"
+      ],
+      "commands": [
+        "cursorRight"
+      ]
+    },
+    {
+      "before": [
+        "<Up>"
+      ],
+      "commands": [
+        "cursorUp"
+      ]
+    },
+    {
+      "before": [
+        "<Down>"
+      ],
+      "commands": [
+        "cursorDown"
+      ]
+    },
+    // 编辑
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+    // Intellisense
+    {
+      "before": [
+        "<C-i>"
+      ],
+      "commands": [
+        "editor.action.triggerSuggest"
+      ]
+    }
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    // Motion
+    {
+      "before": [
+        "<C-right>"
+      ],
+      "after": [
+        "e"
+      ]
+    },
+    {
+      "before": [
+        "s"
+      ],
+      "after": [
+        "<Leader>",
+        "<Leader>",
+        "s"
+      ]
+    },
+    // Camel case motion
+    {
+      "before": [
+        ",",
+        "w"
+      ],
+      "after": [
+        "<Leader>",
+        "w"
+      ]
+    },
+    {
+      "before": [
+        ",",
+        "e"
+      ],
+      "after": [
+        "<Leader>",
+        "e"
+      ]
+    },
+    {
+      "before": [
+        ",",
+        "b"
+      ],
+      "after": [
+        "<Leader>",
+        "b"
+      ]
+    },
+    // 注释
+    {
+      "before": [
+        "<Leader>",
+        "/"
+      ],
+      "commands": [
+        "editor.action.commentLine"
+      ]
+    }
+  ]
 }

@@ -39,7 +39,6 @@ if command -sq postgres
 end
 
 # desktop
-
 set -gx GTK_USE_PORTAL 1
 
 # fcitx 5
@@ -70,7 +69,6 @@ set -gx EDITOR nvim
 set -gx QQ_FIX_MAC 1
 set -gx DISCORD_USER_DATA_DIR "$XDG_DATA_HOME"
 set -gx GNUPGHOME "$XDG_DATA_HOME/gnupg"
-set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
 set -gx PYTHONUSERBASE "$XDG_DATA_HOME/python"
 
 # cuda
@@ -102,6 +100,16 @@ set -gx GOBIN "$GOPATH/bin"
 
 # rust
 set -gx RUSTUP_HOME "$XDG_DATA_HOME/rustup"
+set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
+
+if command -sq rustup
+    prepend_path "$CARGO_HOME/bin"
+end
+
+if command -sq wine
+    mkdir -p "$XDG_DATA_HOME/wineprefixes"
+    set -gx WINEPREFIX "$XDG_DATA_HOME/wineprefixes/default"
+end
 
 # redis
 set -gx REDISCLI_HISTFILE "$XDG_DATA_HOME/redis/rediscli_history"
