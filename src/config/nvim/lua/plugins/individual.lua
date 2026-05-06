@@ -112,4 +112,15 @@ return {
       },
     },
   },
+
+  {
+    "nvim-pack/nvim-spectre",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+    keys = {
+      { "<leader>sf", '<cmd>lua require("spectre").toggle()<CR>', desc = "Toggle Spectre (Global Search/Replace)" },
+      { "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', desc = "Search current word" },
+    },
+  },
 }
