@@ -53,9 +53,9 @@ if [ "$1" = "--backup" ]; then
 fi
 
 # Copy
-cp -rf src/ssh/* "$ssh"
-cp -rf src/config/* "$config"
-cp -rf src/local/* "$local"
+cp -r src/ssh/* "$ssh"
+cp -r src/config/* "$config"
+cp -r src/local/* "$local"
 
 # Fixes
 rm -f "$config/yazi/keymap.toml-*"

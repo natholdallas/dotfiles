@@ -1,5 +1,7 @@
 {
-  "chat.commandCenter.enabled": false,
+  "chat.agent.enabled": false,
+  "chat.tips.enabled": false,
+  "chat.agent.sandbox.enabled": "off",
   "window.commandCenter": false,
   "window.customTitleBarVisibility": "auto",
   "window.zoomLevel": 1,
@@ -51,8 +53,10 @@
   "Lua.workspace.maxPreload": 100000,
   "Lua.diagnostics.libraryFiles": "Disable",
   "Lua.workspace.library": [],
-  // Typescript
-  "typescript.updateImportsOnFileMove.enabled": "always",
+  // JavaScript / Typescript
+  "js/ts.updateImportsOnFileMove.enabled": "always",
+  // Go
+  "go.diagnostic.vulncheck": "Off",
   // XML
   "xml.format.grammarAwareFormatting": false,
   "xml.server.workDir": "~/.cache/lemminx",

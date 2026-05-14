@@ -3,6 +3,10 @@ set fish_cursor_insert line
 set fish_cursor_replace_one underscore
 set fish_cursor_replace underscore
 
+if command -sq brew
+    echo "eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv)" >>~/.config/fish/config.fish
+end
+
 if command -sq micromamba
     set -gx MAMBA_EXE /usr/bin/micromamba
     set -gx MAMBA_ROOT_PREFIX "/home/natholdallas/.local/share/mamba"

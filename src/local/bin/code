@@ -1,0 +1,3 @@
+#! /usr/bin/bash
+
+FAKEHOME="$XDG_CONFIG_HOME/Code/home" fakehome /usr/bin/code "$@"

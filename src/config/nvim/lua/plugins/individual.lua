@@ -11,6 +11,7 @@ return {
         "unocss-language-server",
         "lua-language-server",
         "taplo",
+        "prettierd",
       },
     },
   },
@@ -65,10 +66,10 @@ return {
     opts = {
       filesystem = {
         filtered_items = {
-          hide_dotfiles = false, -- ❗不隐藏 . 开头文件
-          hide_gitignored = true, -- ✅ 只隐藏 gitignore 里的
-          hide_hidden = false, -- 不隐藏系统隐藏文件（Linux）
-          hide_by_name = { ".git" }, -- 通过文件名隐藏
+          -- hide_dotfiles = false, -- ❗不隐藏 . 开头文件
+          -- hide_gitignored = true, -- ✅ 只隐藏 gitignore 里的
+          -- hide_hidden = false, -- 不隐藏系统隐藏文件（Linux）
+          -- hide_by_name = { ".git" }, -- 通过文件名隐藏
         },
       },
     },
@@ -119,8 +120,7 @@ return {
       "nvim-lua/plenary.nvim",
     },
     keys = {
-      { "<leader>sf", '<cmd>lua require("spectre").toggle()<CR>', desc = "Toggle Spectre (Global Search/Replace)" },
-      { "<leader>sw", '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', desc = "Search current word" },
+      { "<leader>ts", '<cmd>lua require("spectre").toggle()<CR>', desc = "Toggle Spectre (Global Search/Replace)" },
     },
   },
 }
