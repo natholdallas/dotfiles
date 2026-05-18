@@ -39,7 +39,7 @@ if command -sq postgres
 end
 
 # desktop
-set -gx GTK_USE_PORTAL 1
+# set -gx GTK_USE_PORTAL 1
 
 # fcitx 5
 if test "$XDG_SESSION_TYPE" != wayland
