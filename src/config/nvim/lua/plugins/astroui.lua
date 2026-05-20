@@ -10,7 +10,7 @@ return {
   opts = {
     styles = { italic = false },
     -- change colorscheme
-    colorscheme = "astrotheme",
+    colorscheme = "astrodark",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
@@ -19,9 +19,6 @@ return {
           ["@comment"] = { italic = false },
           ["@keyword"] = { italic = false },
         },
-      },
-      astrotheme = { -- a table of overrides/changes when applying the astrotheme theme
-        -- Normal = { bg = "#0F1011" },
       },
     },
     -- Icons can be configured throughout the interface
@@ -135,4 +132,29 @@ return {
       },
     },
   },
+  {
+    "everviolet/nvim",
+    name = "evergarden",
+    opts = {
+      theme = {
+        variant = "fall", -- 'winter'|'fall'|'spring'|'summer'
+        accent = "green",
+      },
+      editor = {
+        transparent_background = false,
+        sign = { color = "none" },
+        float = {
+          color = "mantle",
+          solid_border = false,
+        },
+        completion = {
+          color = "surface0",
+        },
+      },
+    },
+  },
+  { "askfiy/visual_studio_code" },
+  { "bluz71/vim-moonfly-colors" },
+  { "Everblush/nvim" },
+  { "RRethy/nvim-base16" },
 }
