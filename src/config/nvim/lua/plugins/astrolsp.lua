@@ -11,7 +11,7 @@ return {
     -- Configuration table of features provided by AstroLSP
     features = {
       autoformat = false, -- enable or disable auto formatting on start
-      codelens = true, -- enable/disable codelens refresh on start
+      codelens = false, -- enable/disable codelens refresh on start
       inlay_hints = false, -- enable/disable inlay hints on start
       semantic_tokens = true, -- enable/disable semantic token highlighting
     },
@@ -69,10 +69,6 @@ return {
       volar = {
         settings = {
           vue = {
-            suggest = {
-              componentNameCasing = "alwaysPascalCase",
-              propNameCasing = "alwaysKebabCase",
-            },
             inlayHints = {
               destructuredProps = true,
               inlineHandlerLeading = true,
@@ -91,9 +87,6 @@ return {
           then
             client.server_capabilities.semanticTokensProvider.full = vim.bo[bufnr].filetype == "vue" and false or true
           end
-
-          -- 3. 設定自定義組件的高亮群組 (如果需要舊行為)
-          -- 確保在所有需要高亮的地方執行一次
           vim.cmd [[ highlight link @lsp.type.component @type]]
         end,
 

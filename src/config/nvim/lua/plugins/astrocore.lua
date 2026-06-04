@@ -40,7 +40,7 @@ return {
         relativenumber = true, -- sets vim.opt.relativenumber
         number = true, -- sets vim.opt.number
         spell = false, -- sets vim.opt.spell
-        signcolumn = "auto", -- sets vim.opt.signcolumn to auto
+        signcolumn = "no", -- sets vim.opt.signcolumn to auto
         wrap = false, -- sets vim.opt.wrap
       },
       g = {},
@@ -61,8 +61,7 @@ return {
         },
       },
       x = {
-        -- 选中一段词后粘贴，不覆盖剪贴板
-        ["p"] = { [["_dP]], desc = "Paste without overwriting reg" },
+        ["p"] = { [["_dP]], desc = "Paste without overwriting reg" }, -- select a word and paste without overwriting the clipboard
       },
     },
   },

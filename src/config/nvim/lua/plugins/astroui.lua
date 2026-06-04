@@ -10,15 +10,13 @@ return {
   opts = {
     styles = { italic = false },
     -- change colorscheme
-    colorscheme = "astrodark",
+    colorscheme = "astrotheme",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
-        {
-          Comment = { italic = false },
-          ["@comment"] = { italic = false },
-          ["@keyword"] = { italic = false },
-        },
+        Comment = { italic = false },
+        ["@comment"] = { italic = false },
+        ["@keyword"] = { italic = false },
       },
     },
     -- Icons can be configured throughout the interface
@@ -56,88 +54,19 @@ return {
 
       -- Override colors (see ./lua/vscode/colors.lua)
       color_overrides = {
-
-        -- vscNone = "NONE",
-        -- vscFront = "#D4D4D4",
         vscBack = "#171717", -- #1F1F1F
-
         vscTabCurrent = "#171717", -- #1F1F1F
-        -- vscTabOther = "#2D2D2D",
-        -- vscTabOutside = "#252526",
-
-        -- vscLeftDark = "#252526",
-        -- vscLeftMid = "#373737",
-        -- vscLeftLight = "#636369",
-
-        -- vscPopupFront = "#BBBBBB",
-        -- vscPopupBack = "#202020",
-        -- vscPopupHighlightBlue = "#04395E",
-        -- vscPopupHighlightGray = "#343B41",
-        --
-        -- vscSplitLight = "#898989",
-        -- vscSplitDark = "#444444",
-        -- vscSplitThumb = "#424242",
-
         vscCursorDarkDark = "#171717", -- #363636
-        -- vscCursorDark = "#51504F",
-        -- vscCursorLight = "#AEAFAD",
-        -- vscSelection = "#264F78",
-        -- vscLineNumber = "#5A5A5A",
-
-        -- vscDiffRedDark = "#4B1818",
-        -- vscDiffRedLight = "#6F1313",
-        -- vscDiffRedLightLight = "#FB0101",
-        -- vscDiffGreenDark = "#373D29",
-        -- vscDiffGreenLight = "#4B5632",
-        -- vscSearchCurrent = "#515c6a",
-        -- vscSearch = "#613315",
-
-        -- vscGitAdded = "#81b88b",
-        -- vscGitModified = "#e2c08d",
-        -- vscGitDeleted = "#c74e39",
-        -- vscGitRenamed = "#73c991",
-        -- vscGitUntracked = "#73c991",
-        -- vscGitIgnored = "#8c8c8c",
-        -- vscGitStageModified = "#e2c08d",
-        -- vscGitStageDeleted = "#c74e39",
-        -- vscGitConflicting = "#e4676b",
-        -- vscGitSubmodule = "#8db9e2",
-
-        -- vscContext = "#404040",
-        -- vscContextCurrent = "#707070",
-        --
-        -- vscFoldBackground = "#202d39",
-
-        -- vscGray = "#808080",
-        -- vscViolet = "#646695",
-        -- vscBlue = "#569CD6",
-        -- vscAccentBlue = "#4FC1FF",
-        -- vscDarkBlue = "#223E55",
-        -- vscMediumBlue = "#18a2fe",
-        -- vscDisabledBlue = "#729DB3",
-        -- vscLightBlue = "#9CDCFE",
-        -- vscGreen = "#6A9955",
-        -- vscBlueGreen = "#4EC9B0",
-        -- vscLightGreen = "#B5CEA8",
-        -- vscRed = "#F44747",
-        -- vscOrange = "#CE9178",
-        -- vscLightRed = "#D16969",
-        -- vscYellowOrange = "#D7BA7D",
-        -- vscYellow = "#DCDCAA",
-        -- vscDarkYellow = "#FFD602",
-        -- vscPink = "#C586C0",
-
-        -- Low contrast with default background
-        -- vscDimHighlight = "#51504F",
       },
     },
   },
+
   {
     "everviolet/nvim",
     name = "evergarden",
     opts = {
       theme = {
-        variant = "fall", -- 'winter'|'fall'|'spring'|'summer'
+        variant = "winter", -- 'winter'|'fall'|'spring'|'summer'
         accent = "green",
       },
       editor = {
@@ -153,8 +82,33 @@ return {
       },
     },
   },
-  { "askfiy/visual_studio_code" },
+
   { "bluz71/vim-moonfly-colors" },
+
   { "Everblush/nvim" },
+
   { "RRethy/nvim-base16" },
+
+  {
+    "AstroNvim/astrotheme",
+    config = function()
+      require("astrotheme").setup {
+        highlights = {
+          astrodark = {
+            modify_hl_groups = function(hl)
+              hl.NeoTreeNormal.bg = "#121418"
+              hl.NeoTreeNormalNC.bg = "#121418"
+            end,
+          },
+        },
+        palettes = {
+          astrodark = { -- Extend or modify astrodarks palette colors
+            ui = {
+              base = "#121418", -- Overrides astrodarks base UI color
+            },
+          },
+        },
+      }
+    end,
+  },
 }

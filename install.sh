@@ -1,24 +1,24 @@
 #!/usr/bin/bash
 
-config="${XDG_CONFIG_HOME:-$HOME/.config}"
-local="${XDG_DATA_HOME:-$HOME/.local}"
+cfg="${XDG_CONFIG_HOME:-$HOME/.config}"
+loc="${XDG_DATA_HOME:-$HOME/.local}"
 ssh="${SSH_HOME:-$HOME/.ssh}"
-backup="${DOTFILES_BACKUP:-$local/share/dotfiles-backup}"
+backup="${DOTFILES_BACKUP:-$loc/share/dotfiles-backup}"
 
 # Make dirs
 if [[ ! -d $ssh ]]; then
   mkdir -p "$ssh"
 fi
-if [[ ! -d $config ]]; then
-  mkdir -p "$config"
+if [[ ! -d $cfg ]]; then
+  mkdir -p "$cfg"
 fi
-if [[ ! -d $local ]]; then
-  mkdir -p "$local"
-  mkdir -p "$local/bin"
-  mkdir -p "$local/opt"
-  mkdir -p "$local/share"
-  mkdir -p "$local/state"
-  mkdir -p "$local/share/gnupg"
+if [[ ! -d $loc ]]; then
+  mkdir -p "$loc"
+  mkdir -p "$loc/bin"
+  mkdir -p "$loc/opt"
+  mkdir -p "$loc/share"
+  mkdir -p "$loc/state"
+  mkdir -p "$loc/share/gnupg"
 fi
 
 # Backup
@@ -28,37 +28,37 @@ if [ "$1" = "--backup" ]; then
   elif [[ ! -z "$(ls -A "$backup")" ]]; then
     rm -rf "${backup:?}/*"
   fi
-  cp -rf "$config/Code" "$backup/config"
-  cp -rf "$config/JetBrains" "$backup/config"
-  cp -rf "$config/Kvantum" "$backup/config"
-  cp -rf "$config/MangoHud" "$backup/config"
-  cp -rf "$config/atuin" "$backup/config"
-  cp -rf "$config/fastfetch" "$backup/config"
-  cp -rf "$config/fcitx5" "$backup/config"
-  cp -rf "$config/fish" "$backup/config"
-  cp -rf "$config/fontconfig" "$backup/config"
-  cp -rf "$config/kitty" "$backup/config"
-  cp -rf "$config/maven" "$backup/config"
-  cp -rf "$config/mpv" "$backup/config"
-  cp -rf "$config/neovide" "$backup/config"
-  cp -rf "$config/npm" "$backup/config"
-  cp -rf "$config/nvim" "$backup/config"
-  cp -rf "$config/wezterm" "$backup/config"
-  cp -rf "$config/yazi" "$backup/config"
-  cp -rf "$config/starship.toml" "$backup/config"
-  cp -rf "$local/bin" "$backup/local/bin"
-  cp -rf "$local/share/applications" "$backup/local/share/applications"
-  cp -rf "$local/share/fonts" "$backup/local/share/fonts"
+  cp -rf "$cfg/Code" "$backup/config"
+  cp -rf "$cfg/JetBrains" "$backup/config"
+  cp -rf "$cfg/Kvantum" "$backup/config"
+  cp -rf "$cfg/MangoHud" "$backup/config"
+  cp -rf "$cfg/atuin" "$backup/config"
+  cp -rf "$cfg/fastfetch" "$backup/config"
+  cp -rf "$cfg/fcitx5" "$backup/config"
+  cp -rf "$cfg/fish" "$backup/config"
+  cp -rf "$cfg/fontconfig" "$backup/config"
+  cp -rf "$cfg/kitty" "$backup/config"
+  cp -rf "$cfg/maven" "$backup/config"
+  cp -rf "$cfg/mpv" "$backup/config"
+  cp -rf "$cfg/neovide" "$backup/config"
+  cp -rf "$cfg/npm" "$backup/config"
+  cp -rf "$cfg/nvim" "$backup/config"
+  cp -rf "$cfg/wezterm" "$backup/config"
+  cp -rf "$cfg/yazi" "$backup/config"
+  cp -rf "$cfg/starship.toml" "$backup/config"
+  cp -rf "$loc/bin" "$backup/local/bin"
+  cp -rf "$loc/share/applications" "$backup/local/share/applications"
+  cp -rf "$loc/share/fonts" "$backup/local/share/fonts"
   echo "backup folder in $backup"
 fi
 
 # Copy
 cp -rf src/ssh/* "$ssh"
-cp -rf src/config/* "$config"
-cp -rf src/local/* "$local"
+cp -rf src/config/* "$cfg"
+cp -rf src/local/* "$loc"
 
 # Fixes
-rm -f "$config/yazi/keymap.toml-*"
-rm -f "$config/yazi/yazi.toml-*"
+rm -f "$cfg/yazi/keymap.toml-*"
+rm -f "$cfg/yazi/yazi.toml-*"
 
 echo "successfully"
