@@ -1,53 +1,89 @@
-echo "Install Code Editor"
-paru -S visual-studio-code-bin
+read -rp "Install Code Editor (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S visual-studio-code-bin
+fi
 
-echo "Install Mr.Music"
-paru -S spotify spicetify-cli spicetify-marketplace-bin
+read -rp "Install Mr.Music (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S spotify spicetify-cli spicetify-marketplace-bin
+fi
 
-echo "Install Hedonism P2P"
-paru -S easytier-bin
+read -rp "Install Hedonism P2P (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S easytier-bin
+fi
 
-echo "Install Proxy"
-paru -S daed-avx2-bin
+read -rp "Install Proxy (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S daed-avx2-bin
+fi
 
-echo "Install Browser"
-paru -S google-chrome zen-browser-bin
+read -rp "Install Browser (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S google-chrome zen-browser-bin
+fi
 
-echo "Install Social Package"
-paru -S linuxqq-appimage telegram-desktop wechat-universal-bwrap
+read -rp "Install Social Package (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S linuxqq-appimage telegram-desktop wechat-universal-bwrap
+fi
 
-ehco "Install Downgrade"
-paru -S downgrade
+read -rp "Install Downgrade (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S downgrade
+fi
 
-echo "Install Devlopment Kit"
-paru -S bun-bin micromamba-bin aspnet-runtime-bin wechat-devtools-bin dotnet-runtime-bin beekeeper-studio-bin tiny-rdm-bin
+read -rp "Install Devlopment Kit (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S bun-bin micromamba-bin aspnet-runtime-bin wechat-devtools-bin dotnet-runtime-bin beekeeper-studio-bin tiny-rdm-bin
+fi
 
-echo "Install Office"
-paru -S onlyoffice-bin ocrmypdf xmind
+read -rp "Install Office (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S onlyoffice-bin ocrmypdf xmind
+fi
 
-echo "Install Causal Package"
-paru -S edex-ui-bin cowsay sl lolcat nyancat cmatrix asciiquarium
+read -rp "Install Causal Package (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S edex-ui-bin cowsay sl lolcat nyancat cmatrix asciiquarium
+fi
 
-echo "Install Crawler Tools"
-paru -S gallery-dl youtube-dl yt-dlp
+read -rp "Install Crawler Tools (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S gallery-dl youtube-dl yt-dlp
+fi
 
-echo "Install Useful Package"
-paru -S numbat-bin envycontrol ventoy-bin icoextract
+read -rp "Install Useful Package (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S numbat-bin envycontrol ventoy-bin icoextract
+fi
 
-echo "Install Gaming Package"
-paru -S uuplugin-bin vkbasalt-cli xmcl-launcher nbtexplorer proton-ge-custom-bin steam
+read -rp "Install Gaming Package (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S uuplugin-bin vkbasalt-cli xmcl-launcher nbtexplorer proton-ge-custom-bin steam
+fi
 
-echo "Install XDG Fix"
-paru -S xdg-ninja
+read -rp "Install XDG Fix (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S xdg-ninja
+fi
 
-echo "Install Appearance Package"
-paru -S bibata-cursor-theme-bin
+read -rp "Install Appearance Package (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S bibata-cursor-theme-bin
+fi
 
-echo "Install Fonts"
-paru -S ttf-annotation-mono ttf-ligaconsolas-nerd-font ttf-monaco ttf-pingfang-git ttf-firacode-nerd otf-codenewroman-nerd otf-comicshanns-nerd
+read -rp "Install Fonts (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S ttf-annotation-mono ttf-ligaconsolas-nerd-font ttf-monaco ttf-pingfang-git ttf-firacode-nerd otf-codenewroman-nerd otf-comicshanns-nerd
+fi
 
-echo "Install Android Emulator"
-paru -S waydroid waydroid-helper
+read -rp "Install Android Emulator (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S waydroid waydroid-helper
+fi
 
-echo "Install Obs"
-paru -S obs-studio obs-pipewire-audio-capture-bin
+read -rp "Install Obs (y/N):" confirm
+if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
+  paru -S obs-studio obs-pipewire-audio-capture-bin
+fi
