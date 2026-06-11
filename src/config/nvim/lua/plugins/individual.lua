@@ -12,6 +12,7 @@ return {
         "lua-language-server",
         "taplo",
         "prettierd",
+        "tailwindcss-language-server",
       },
     },
   },

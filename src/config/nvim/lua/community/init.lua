@@ -23,5 +23,5 @@ return {
   has "fish" and { import = "astrocommunity.pack.fish" } or nil,
   has "bash" and { import = "astrocommunity.pack.bash" } or nil,
   has "node" and { import = "astrocommunity.pack.vue" } or nil,
-  has "python3" and { import = "astrocommunity.pack.python" } or nil,
+  -- has "python3" and { import = "astrocommunity.pack.python" } or nil,
 }
