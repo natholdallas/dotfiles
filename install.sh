@@ -55,7 +55,8 @@ fi
 # Copy
 cp -rf src/ssh/* "$ssh"
 cp -rf src/config/* "$cfg"
-cp -rf src/local/* "$loc"
+cp -rf src/local/share/* "$loc/share"
+cp -rf src/local/bin/* "$loc/bin"
 
 # Fixes
 rm -f "$cfg/yazi/keymap.toml-*"

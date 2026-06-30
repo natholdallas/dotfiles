@@ -53,7 +53,7 @@ set -gx XMODIFIERS @im=fcitx
 set -gx SDL_IM_MODULE fcitx
 set -gx INPUT_METHOD fcitx
 set -gx GLFW_IM_MODULE ibus
-set -gx QT_WAYLAND_TEXT_INPUT_PROTOCOL zwp_text_input_v1
+# set -gx QT_WAYLAND_TEXT_INPUT_PROTOCOL zwp_text_input_v3
 
 # etc
 set -gx ANDROID_USER_HOME "$XDG_DATA_HOME/android"

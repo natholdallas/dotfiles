@@ -15,10 +15,9 @@ return {
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.html-css" },
-  { import = "astrocommunity.pack.toml" },
 
   -- 只有当系统安装了对应编译器/解释器时才加载的拓展包
-  has "rustup" and { import = "astrocommunity.pack.rust" } or nil,
+  -- has "rustup" and { import = "astrocommunity.pack.rust" } or nil,
   has "go" and { import = "astrocommunity.pack.go" } or nil,
   has "fish" and { import = "astrocommunity.pack.fish" } or nil,
   has "bash" and { import = "astrocommunity.pack.bash" } or nil,

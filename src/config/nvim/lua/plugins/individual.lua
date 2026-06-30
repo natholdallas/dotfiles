@@ -10,7 +10,7 @@ return {
       ensure_installed = {
         "unocss-language-server",
         "lua-language-server",
-        "taplo",
+        "tombi",
         "prettierd",
         "tailwindcss-language-server",
       },
