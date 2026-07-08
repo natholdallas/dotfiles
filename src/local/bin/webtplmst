@@ -1,0 +1,9 @@
+#! /usr/bin/bash
+
+if [ -z "$1" ]; then
+  echo "Missing parameter"
+else
+  git clone https://github.com/natholdallas/web-template.git "$1"
+  cd "$1" || exit
+  ./main.sh renewal "$1"
+fi

@@ -1,0 +1,274 @@
+{
+    "zoomLevel": 1.2,
+    "editor.showStickyLines": false,
+    "editor.showCodeVision": false,
+    "editor.fontFamily": "Monaco Nerd Font",
+    "editor.lineSpacing": 1.4,
+    "editor.showInlayHints": false,
+    "editor.showLineStatus": false,
+    "editor.showDeclarationUsages": false,
+    "terminal.fontFamily": "Monaco Nerd Font",
+    "terminal.lineSpacing": 1.4,
+    "git.push.confirm": false,
+    "git.autoSaveOnStage": "Off",
+    "fus.sendAllowed": false,
+    "java.terminal.addJavaToolchain": false,
+    "maven.home": [
+        {
+            "path": "/usr/share/java/maven",
+            "name": "maven"
+        }
+    ],
+    "maven.user.settings": [
+        {
+            "path": "/home/natholdallas/.local/share/m2/settings.xml"
+        }
+    ],
+    "plugins": [
+        {
+            "type": "remove",
+            "pluginName": "fleet.terraform"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.rust.ai"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.rust"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.svelte"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.php"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.amper"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.emmet"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.mercury"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.tailwindcss"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.vue"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.javascript"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.docker"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.language.cpp"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.dotnet"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.aiCompletion"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.aiCompletion.java"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.aiCompletion.python"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.go.ai"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.grazie"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.grazie.json"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.grazie.kotlin"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.grazie.markdown"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.grazie.yaml"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.java.ai"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.javascript.ai"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.kotlin.ai"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.python.ai"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.testspark"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.ai"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.codecanvas"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.wsl"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.themeDesigner"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.selfprofiling"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.toolbox"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.ssh"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.lldb"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.dap"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.lsp"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.lightweightIndexer"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.gradle"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.go"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.groovy"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.greyTheme"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.python"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.css"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.marine"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.shell"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.toml"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.keymaps.VSCode"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.textmate"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.log"
+        },
+        {
+            "type": "add",
+            "pluginName": "fleet.whatsNew"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.react"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.vite"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.webpack"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.keymaps.SublimeText"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.space"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.keymaps.Eclipse"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.keymaps.Emacs"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.keymaps.IJClassic"
+        },
+        {
+            "type": "remove",
+            "pluginName": "fleet.vim"
+        }
+    ],
+    "theme": "dark"
+}

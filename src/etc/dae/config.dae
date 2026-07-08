@@ -1,0 +1,111 @@
+global {
+   # Bind to LAN and/or WAN as you want. Replace the interface name to your own.
+  lan_interface: enp5s0, wlo1, tailscale0
+  wan_interface: auto # Use "auto" to auto detect WAN interface.
+  # tproxy_port: 12345
+  # tproxy_port_protect: true
+  log_level: warn
+  allow_insecure: false
+  auto_config_kernel_parameter: true
+  # mptcp: true 
+}
+
+subscription {
+  # use https-file first and then store the sub to sub.d
+  # nexitally: ''
+  nexitally: 'file://sub.d/nexitally.sub'
+}
+
+# dns {
+#   upstream {
+#     alidns: 'udp://223.5.5.5:53'
+#     cfdns: 'tcp+udp://1.1.1.1:53'
+#     googledns: 'tcp+udp://1.1.1.1:53'
+#     googledns-https: 'https://dns.google/dns-query'
+#   }
+#
+#   routing {
+#     request {
+#       # Block AD
+#       qname(geosite:category-ads-all) -> reject
+#       qtype(https) -> googledns-https
+#       qname(geosite:cn) -> alidns
+#       fallback: googledns
+#     }
+#   }
+# }
+
+dns {
+  upstream {
+    alidns: 'udp://dns.alidns.com:53'
+    alidns_doh: 'https://dns.alidns.com/dns-query'
+    alidns_h3: 'h3://dns.alidns.com/dns-query'
+    cfdns: 'tcp+udp://cloudflare-dns.com:53'
+    cfdns_doh: 'https://cloudflare-dns.com/dns-query'
+    cfdns_h3: 'h3://cloudflare-dns.com/dns-query'
+    googledns: 'tcp+udp://dns.google:53'
+    googledns_doh: 'https://dns.google/dns-query'
+    googledns_h3: 'h3://dns.google/dns-query'
+  }
+  routing {
+    request {
+      qname(geosite:category-ads-all) -> reject
+      qtype(https) -> reject
+      qname(geosite:cn) -> alidns_doh
+      fallback: cfdns_doh
+    }
+  }
+}
+
+group {
+  hk {
+    filter: subtag(nexitally)
+    filter: name(regex: 'US')
+    policy: min_moving_avg
+  }
+
+  ssh {
+    filter: subtag(nexitally)
+    filter: name(regex: 'HK')
+    policy: min_moving_avg
+  }
+}
+
+routing {
+  # No Proxy
+  pname(NetworkManager, systemd-resolved, dnsmasq) -> direct
+  pname(tailscaled, zerotier-one, easytier-core) -> direct
+  pname(uuplugin) -> must_direct
+  dip(224.0.0.0/3, 'ff00::/8') -> direct
+
+  ## Block
+  domain(geosite:category-ads-all) -> block
+  ## Disable h3 because it usually consumes too much cpu/mem resources.
+  l4proto(udp) && dport(443) -> block
+  
+  # direct
+  pname(spotify) -> direct
+  pname(ssh, adb) -> direct
+
+  # proxy
+  dip(103.211.32.21) -> ssh
+  dip(72.60.163.117) -> ssh
+  dip(43.160.205.126) -> ssh
+  dip(134.159.80.63) -> hk
+
+  ## 目标非常用端口都走直连，避免BT流量和游戏走代理
+  #!dport(21,22,23,53,80,123,143,194,443,465,587,853,993,995,998) -> direct
+
+  # archlinux
+  domain(ping.archlinux.org) -> direct
+
+  # steam
+  domain(geosite:steam@cn, steamserver.net, steamcontent.com) -> direct
+
+  # CN
+  dip(geoip:private) -> direct
+  dip(geoip:cn) -> direct
+  domain(geosite:cn) -> direct
+
+  fallback: hk
+}

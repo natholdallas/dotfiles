@@ -1,0 +1,10 @@
+[Trigger]
+Operation = Install
+Operation = Upgrade
+Type = Package
+Target = spotify
+
+[Action]
+Description = Fixing permissions...
+When = PostTransaction
+Exec = /usr/bin/bash -c 'chmod -R o+w /opt/spotify'

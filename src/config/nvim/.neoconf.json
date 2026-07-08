@@ -1,0 +1,20 @@
+{
+  "neodev": {
+    "library": {
+      "enabled": false,
+      "plugins": true
+    }
+  },
+  "neoconf": {
+    "plugins": {
+      "lua_ls": {
+        "enabled": true
+      }
+    }
+  },
+  "lspconfig": {
+    "lua_ls": {
+      "Lua.format.enable": false
+    }
+  }
+}
