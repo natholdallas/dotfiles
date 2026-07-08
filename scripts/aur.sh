@@ -15,7 +15,7 @@ fi
 
 read -rp "Install Proxy (y/N):" confirm
 if [[ "$confirm" =~ ^[yY](es)?$ ]]; then
-  paru -S daed-avx2-bin
+  paru -S dae-avx2-bin
 fi
 
 read -rp "Install Browser (y/N):" confirm

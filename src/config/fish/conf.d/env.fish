@@ -100,10 +100,10 @@ if command -sq rustup
     prepend_path "$CARGO_HOME/bin"
 end
 
-# if command -sq wine
-#     mkdir -p "$XDG_DATA_HOME/wineprefixes"
-#     set -gx WINEPREFIX "$XDG_DATA_HOME/wineprefixes/default"
-# end
+if command -sq wine
+    mkdir -p "$XDG_DATA_HOME/wineprefixes"
+    set -gx WINEPREFIX "$XDG_DATA_HOME/wineprefixes/default"
+end
 
 # redis
 set -gx REDISCLI_HISTFILE "$XDG_DATA_HOME/redis/rediscli_history"
@@ -113,7 +113,7 @@ set -gx REDISCLI_RCFILE "$XDG_CONFIG_HOME/redis/redisclirc"
 set -gx DOTNET_CLI_HOME "$XDG_DATA_HOME/dotnet"
 
 set -gx __GL_SHADER_DISK_CACHE_SKIP_CLEANUP 1
-set -gx __GL_SHADER_DISK_CACHE_SIZE 4294967296
+set -gx __GL_SHADER_DISK_CACHE_SIZE 34359738368
 set -gx __GL_THREADED_OPTIMIZATIONS 1
 
 prepend_path "$HOME/.local/bin"
