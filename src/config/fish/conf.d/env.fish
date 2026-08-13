@@ -16,19 +16,19 @@ set -gx XDG_DATA_HOME "$HOME/.local/share"
 set -gx XDG_STATE_HOME "$HOME/.local/state"
 
 # pnpm
-if command -sq pnpm
+if type -q pnpm
     set -q PNPM_HOME || set -gx PNPM_HOME "$HOME/.local/share/pnpm"
     prepend_path "$PNPM_HOME"
 end
 
 # npm
-if command -sq npm
+if type -q npm
     set -gx NPM_CONFIG_USERCONFIG "$XDG_CONFIG_HOME/npm/npmrc"
     prepend_path "$XDG_DATA_HOME/npm/bin"
 end
 
 # postgres sql
-if command -sq postgres
+if type -q postgres
     set -gx PSQLRC "$XDG_CONFIG_HOME/pg/psqlrc"
     set -gx PSQL_HISTORY "$XDG_STATE_HOME/psql_history"
     set -gx PGPASSFILE "$XDG_CONFIG_HOME/pg/pgpass"
@@ -96,11 +96,11 @@ set -gx GOBIN "$GOPATH/bin"
 set -gx RUSTUP_HOME "$XDG_DATA_HOME/rustup"
 set -gx CARGO_HOME "$XDG_DATA_HOME/cargo"
 
-if command -sq rustup
+if type -q rustup
     prepend_path "$CARGO_HOME/bin"
 end
 
-if command -sq wine
+if type -q wine
     mkdir -p "$XDG_DATA_HOME/wineprefixes"
     set -gx WINEPREFIX "$XDG_DATA_HOME/wineprefixes/default"
 end
@@ -112,9 +112,9 @@ set -gx REDISCLI_RCFILE "$XDG_CONFIG_HOME/redis/redisclirc"
 # dotnet
 set -gx DOTNET_CLI_HOME "$XDG_DATA_HOME/dotnet"
 
-set -gx __GL_SHADER_DISK_CACHE_SKIP_CLEANUP 1
-set -gx __GL_SHADER_DISK_CACHE_SIZE 34359738368
-set -gx __GL_THREADED_OPTIMIZATIONS 1
+# set -gx __GL_SHADER_DISK_CACHE_SKIP_CLEANUP 1
+# set -gx __GL_SHADER_DISK_CACHE_SIZE 34359738368
+# set -gx __GL_THREADED_OPTIMIZATIONS 1
 
 prepend_path "$HOME/.local/bin"
 prepend_path "$GOBIN"

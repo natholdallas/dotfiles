@@ -62,19 +62,19 @@ return {
   --   end,
   -- },
 
-  {
-    "nvim-neo-tree/neo-tree.nvim",
-    opts = {
-      filesystem = {
-        filtered_items = {
-          -- hide_dotfiles = false, -- ❗不隐藏 . 开头文件
-          -- hide_gitignored = true, -- ✅ 只隐藏 gitignore 里的
-          -- hide_hidden = false, -- 不隐藏系统隐藏文件（Linux）
-          -- hide_by_name = { ".git" }, -- 通过文件名隐藏
-        },
-      },
-    },
-  },
+  -- {
+  --   "nvim-neo-tree/neo-tree.nvim",
+  --   opts = {
+  --     filesystem = {
+  --       filtered_items = {
+  --         hide_dotfiles = false, -- ❗不隐藏 . 开头文件
+  --         hide_gitignored = true, -- ✅ 只隐藏 gitignore 里的
+  --         hide_hidden = false, -- 不隐藏系统隐藏文件（Linux）
+  --         hide_by_name = { ".git" }, -- 通过文件名隐藏
+  --       },
+  --     },
+  --   },
+  -- },
 
   {
     "Saghen/blink.cmp",

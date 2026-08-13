@@ -1,10 +1,10 @@
-if command -sq exa
+if type -q exa
     alias ls='exa --icons --sort type'
     alias ll='exa -Alh --icons --sort type'
     alias la='exa -Alh --icons --sort type'
     alias lt='exa -lTah --icons --sort type'
     alias lsa='exa -A --icons --sort type'
-else if command -sq eza
+else if type -q eza
     alias ls='eza --icons --sort type'
     alias ll='eza -Alh --icons --sort type'
     alias la='eza -Alh --icons --sort type'
@@ -18,12 +18,12 @@ else
     alias lt='tree -pCsh'
 end
 
-if command -sq bat
+if type -q bat
     alias cat='bat -pp'
     alias ccat='/usr/bin/cat'
 end
 
-if command -sq tmux
+if type -q tmux
     alias tt='tmux attach || tmux'
     alias tn='tmux new'
     alias tl='tmux ls'
@@ -31,43 +31,43 @@ if command -sq tmux
     alias tk='tmux kill-session -t'
 end
 
-if command -sq sudo-rs
+if type -q sudo-rs
     alias sudo='sudo-rs'
 end
 
-if command -sq fd
+if type -q fd
     alias fd="fd -HIg"
 end
 
-if command -sq trash
+if type -q trash
     alias trash-screenshot="trash $HOME/Pictures/Screenshots/*"
     alias trash-cache="trash $XDG_CACHE_HOME/*"
 end
 
-if command -sq yarn
+if type -q yarn
     alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
 end
 
-if command -sq adb
+if type -q adb
     alias adb="HOME=$XDG_DATA_HOME/android adb"
 end
 
-if command -sq wget
+if type -q wget
     alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget-hsts"
 end
 
-if command -sq mvn
+if type -q mvn
     alias mvn="mvn -gs "$XDG_CONFIG_HOME"/maven/settings.xml"
 end
 
-if command -sq curl
+if type -q curl
     alias whatsip="curl ipinfo.io/ip"
 end
 
-if command -sq rm
+if type -q rm
     alias rm="rm -vr"
 end
 
-if command -sq nvidia-settings
+if type -q nvidia-settings
     alias nvidia-settings="nvidia-settings --config="$XDG_CONFIG_HOME"/nvidia/settings"
 end
