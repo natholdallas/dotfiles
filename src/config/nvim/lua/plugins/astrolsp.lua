@@ -53,6 +53,26 @@ return {
     config = {
       lemminx = { settings = { xml = { server = { workDir = "~/.cache/lemminx" } } } },
 
+      basedpyright = {
+        settings = {
+          basedpyright = {
+            analysis = {
+              typeCheckingMode = "basic",
+              autoImportCompletions = true,
+              diagnosticSeverityOverrides = {
+                reportUnusedImport = "information",
+                reportUnusedFunction = "information",
+                reportUnusedVariable = "information",
+                -- reportGeneralTypeIssues = "none",
+                -- reportOptionalMemberAccess = "none",
+                -- reportOptionalSubscript = "none",
+                -- reportPrivateImportUsage = "none",
+              },
+            },
+          },
+        },
+      },
+
       gopls = {
         settings = {
           gopls = {
@@ -69,6 +89,10 @@ return {
       volar = {
         settings = {
           vue = {
+            suggest = {
+              componentNameCasing = "alwaysPascalCase",
+              propNameCasing = "alwaysKebabCase",
+            },
             inlayHints = {
               destructuredProps = true,
               inlineHandlerLeading = true,

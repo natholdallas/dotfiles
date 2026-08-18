@@ -11,16 +11,16 @@ return {
   { import = "astrocommunity.split-and-window.mini-map" },
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
 
-  -- 语言包 (可以根据系统环境动态加载)
-  { import = "astrocommunity.pack.lua" },
-  { import = "astrocommunity.pack.typescript" },
-  { import = "astrocommunity.pack.html-css" },
-
   -- 只有当系统安装了对应编译器/解释器时才加载的拓展包
   -- has "rustup" and { import = "astrocommunity.pack.rust" } or nil,
+  has "tsc" and { import = "astrocommunity.pack.typescript" } or nil,
+  has "tsc" and { import = "astrocommunity.pack.html-css" } or nil,
+  has "lua" and { import = "astrocommunity.pack.lua" } or nil,
   has "go" and { import = "astrocommunity.pack.go" } or nil,
   has "fish" and { import = "astrocommunity.pack.fish" } or nil,
   has "bash" and { import = "astrocommunity.pack.bash" } or nil,
   has "node" and { import = "astrocommunity.pack.vue" } or nil,
-  -- has "python3" and { import = "astrocommunity.pack.python" } or nil,
+  has "python" and { import = "astrocommunity.pack.python.base" } or nil,
+  has "python" and { import = "astrocommunity.pack.python.ty" } or nil,
+  has "python" and { import = "astrocommunity.pack.python.ruff" } or nil,
 }

@@ -1,6 +1,8 @@
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
 
+local function has(cmd) return vim.fn.executable(cmd) == 1 end
+
 ---@type LazySpec
 return {
   -- use mason-lspconfig to configure LSP installations
@@ -8,18 +10,13 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = {
       ensure_installed = {
-        "unocss-language-server",
-        "lua-language-server",
+        has "node" and "unocss-language-server" or nil,
+        -- "lua-language-server",
         "tombi",
-        "prettierd",
-        "tailwindcss-language-server",
+        has "node" and "prettierd" or nil,
+        has "node" and "tailwindcss-language-server" or nil,
       },
     },
-  },
-
-  {
-    "Comment.nvim",
-    enabled = true,
   },
 
   {
@@ -51,30 +48,19 @@ return {
     config = function() require("nvim-surround").setup {} end,
   },
 
-  -- {
-  --   "nvim-treesitter/nvim-treesitter",
-  --   opts = function(_, opts)
-  --     opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
-  --       "lua",
-  --       "vim",
-  --       "regex",
-  --     })
-  --   end,
-  -- },
-
-  -- {
-  --   "nvim-neo-tree/neo-tree.nvim",
-  --   opts = {
-  --     filesystem = {
-  --       filtered_items = {
-  --         hide_dotfiles = false, -- ❗不隐藏 . 开头文件
-  --         hide_gitignored = true, -- ✅ 只隐藏 gitignore 里的
-  --         hide_hidden = false, -- 不隐藏系统隐藏文件（Linux）
-  --         hide_by_name = { ".git" }, -- 通过文件名隐藏
-  --       },
-  --     },
-  --   },
-  -- },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      filesystem = {
+        filtered_items = {
+          hide_dotfiles = false, -- ❗不隐藏 . 开头文件
+          hide_gitignored = true, -- ✅ 只隐藏 gitignore 里的
+          hide_hidden = false, -- 不隐藏系统隐藏文件（Linux）
+          hide_by_name = { ".git" }, -- 通过文件名隐藏
+        },
+      },
+    },
+  },
 
   {
     "Saghen/blink.cmp",
@@ -86,36 +72,6 @@ return {
   },
 
   {
-    "supermaven-inc/supermaven-nvim",
-    event = "InsertEnter",
-    cmd = { "SupermavenUseFree", "SupermavenUsePro" },
-    opts = {
-      keymaps = {
-        accept_suggestion = "<C-f>", -- handled by completion engine
-      },
-    },
-    specs = {
-      {
-        "AstroNvim/astrocore",
-        opts = {
-          options = {
-            g = {
-              -- set the ai_accept function
-              ai_accept = function()
-                local suggestion = require "supermaven-nvim.completion_preview"
-                if suggestion.has_suggestion() then
-                  vim.schedule(function() suggestion.on_accept_suggestion() end)
-                  return true
-                end
-              end,
-            },
-          },
-        },
-      },
-    },
-  },
-
-  {
     "nvim-pack/nvim-spectre",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -124,6 +80,17 @@ return {
       { "<leader>ts", '<cmd>lua require("spectre").toggle()<CR>', desc = "Toggle Spectre (Global Search/Replace)" },
     },
   },
+
+  -- {
+  --   "nvim-treesitter/nvim-treesitter",
+  --   opts = function(_, opts)
+  --     opts.ensure_installed = require("astrocore").list_insert_unique(opts.ensure_installed, {
+  --       "lua",
+  --       "vim",
+  --       "regex",
+  --     })
+  --   end,
+  -- },
 
   -- {
   --   "romus204/tree-sitter-manager.nvim",
