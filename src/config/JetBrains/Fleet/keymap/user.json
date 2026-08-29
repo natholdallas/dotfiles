@@ -1,0 +1,36 @@
+{
+  "keymap": [
+    {
+      "key": "alt-return",
+      "action": "-quick-fixes"
+    },
+    {
+      "key": "alt-numpadenter",
+      "action": "-quick-fixes"
+    },
+    {
+      "key": "ctrl-period",
+      "action": "quick-fixes"
+    },
+    {
+      "key": "ctrl-shift-k",
+      "action": "-goto/action"
+    },
+    {
+      "key": "shift-ctrl-p",
+      "action": "goto/action"
+    },
+    {
+      "key": "ctrl-shift-p",
+      "action": "-goto/symbol"
+    },
+    {
+      "key": "ctrl-shift-backspace",
+      "action": "-editor/delete-line"
+    },
+    {
+      "key": "shift-ctrl-k",
+      "action": "editor/delete-line"
+    }
+  ]
+}

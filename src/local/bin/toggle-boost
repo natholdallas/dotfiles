@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+
+set -e
+trap 'exit 1' SIGINT
+
+if [[ $(cat /sys/devices/system/cpu/intel_pstate/no_turbo) -eq 1 ]]; then
+  echo 0 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo 1>/dev/null && echo "Enabled"
+  [[ ! -x "$(command -v notify-send)" ]] || notify-send --app-name="Toogle-Boost" "Boost" "Enabled"
+else
+  echo 1 | sudo tee /sys/devices/system/cpu/intel_pstate/no_turbo 1>/dev/null && echo "Disabled"
+  [[ ! -x "$(command -v notify-send)" ]] || notify-send --app-name="Toogle-Boost" "Boost" "Disabled"
+fi
