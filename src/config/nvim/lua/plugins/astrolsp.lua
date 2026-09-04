@@ -64,6 +64,17 @@ return {
         },
       },
 
+      taplo = {
+        settings = {
+          taplo = {
+            configFile = {
+              -- 允许使用自定义或空配置文件，避免硬性规则拦截
+              enabled = true,
+            },
+          },
+        },
+      },
+
       lemminx = { settings = { xml = { server = { workDir = "~/.cache/lemminx" } } } },
 
       basedpyright = {

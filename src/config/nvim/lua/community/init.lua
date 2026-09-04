@@ -11,6 +11,9 @@ return {
   { import = "astrocommunity.split-and-window.mini-map" },
   { import = "astrocommunity.scrolling.nvim-scrollbar" },
 
+  -- 配置文件增强
+  { import = "astrocommunity.pack.yaml" },
+
   -- 只有当系统安装了对应编译器/解释器时才加载的拓展包
   has "lua" and { import = "astrocommunity.pack.lua" } or nil,
   has "go" and { import = "astrocommunity.pack.go" } or nil,
