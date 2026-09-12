@@ -14,7 +14,7 @@ config_dirs=(
   fcitx5 fish fontconfig kitty maven mpv neovide
   npm nvim opencode wezterm yazi
 )
-config_files=(starship.toml)
+config_files=(starship.toml wgetrc)
 local_dirs=(bin "share/applications" "share/fonts")
 
 if [ "$1" = "--backup" ]; then
@@ -29,6 +29,26 @@ if [ "$1" = "--backup" ]; then
     cp -rf "$loc/$d" "$backup/local/$d"
   done
   echo "backup folder in $backup"
+fi
+
+server_config_dirs=(atuin fastfetch fish npm yazi)
+server_config_files=(starship.toml wgetrc)
+server_local_dirs=(bin)
+
+if [ "$1" = "--server" ]; then
+  for d in "${server_config_dirs[@]}"; do
+    cp -rf "src/config/$d" "$cfg/"
+  done
+  for f in "${server_config_files[@]}"; do
+    cp -rf "src/config/$f" "$cfg/"
+  done
+  for d in "${server_local_dirs[@]}"; do
+    cp -rf "src/local/$d" "$loc/"
+  done
+  cp -rf src/ssh/* "$ssh"
+  rm -f "${cfg:?}/yazi/keymap.toml-*" "${cfg:?}/yazi/yazi.toml-*"
+  echo "successfully"
+  exit 0
 fi
 
 if [ "$1" = "--coverage" ]; then
