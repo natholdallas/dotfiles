@@ -17,52 +17,77 @@ config_dirs=(
 config_files=(starship.toml wgetrc)
 local_dirs=(bin "share/applications" "share/fonts")
 
-if [ "$1" = "--backup" ]; then
-  mkdir -p "$backup"/{config,local/{bin,share,state}}
-  for d in "${config_dirs[@]}"; do
-    cp -rf "$cfg/$d" "$backup/config/"
-  done
-  for f in "${config_files[@]}"; do
-    cp -rf "$cfg/$f" "$backup/config/"
-  done
-  for d in "${local_dirs[@]}"; do
-    cp -rf "$loc/$d" "$backup/local/$d"
-  done
-  echo "backup folder in $backup"
-fi
-
 server_config_dirs=(atuin fastfetch fish npm yazi)
 server_config_files=(starship.toml wgetrc)
 server_local_dirs=(bin)
 
-if [ "$1" = "--server" ]; then
-  for d in "${server_config_dirs[@]}"; do
-    cp -rf "src/config/$d" "$cfg/"
-  done
-  for f in "${server_config_files[@]}"; do
-    cp -rf "src/config/$f" "$cfg/"
-  done
-  for d in "${server_local_dirs[@]}"; do
-    cp -rf "src/local/$d" "$loc/"
-  done
-  cp -rf src/ssh/* "$ssh"
-  rm -f "${cfg:?}/yazi/keymap.toml-*" "${cfg:?}/yazi/yazi.toml-*"
-  echo "successfully"
-  exit 0
-fi
+usage() {
+  cat <<'EOF'
+Usage: install.sh [OPTION]
 
-if [ "$1" = "--coverage" ]; then
-  echo "coverage configuration"
-  for d in "${config_dirs[@]}"; do
-    rm -rf "${cfg:?}/$d"
-  done
-  for f in "${config_files[@]}"; do
-    rm -rf "${cfg:?}/$f"
-  done
-  for d in "${local_dirs[@]}"; do
-    rm -rf "${loc:?}/$d"
-  done
-fi
+Options:
+  --backup     Backup current configuration to $backup
+  --server     Install server configuration only
+  --coverage   Remove existing configuration before installing
+  --help, -h   Show this help message
+
+Without options, installs configuration normally.
+EOF
+}
+
+case "${1:-}" in
+  --backup)
+    mkdir -p "$backup"/{config,local/{bin,share,state}}
+    for d in "${config_dirs[@]}"; do
+      cp -rf "$cfg/$d" "$backup/config/"
+    done
+    for f in "${config_files[@]}"; do
+      cp -rf "$cfg/$f" "$backup/config/"
+    done
+    for d in "${local_dirs[@]}"; do
+      cp -rf "$loc/$d" "$backup/local/$d"
+    done
+    echo "backup folder in $backup"
+    ;;
+  --server)
+    for d in "${server_config_dirs[@]}"; do
+      cp -rf "src/config/$d" "$cfg/"
+    done
+    for f in "${server_config_files[@]}"; do
+      cp -rf "src/config/$f" "$cfg/"
+    done
+    for d in "${server_local_dirs[@]}"; do
+      cp -rf "src/local/$d" "$loc/"
+    done
+    cp -rf src/ssh/* "$ssh"
+    rm -f "${cfg:?}/yazi/keymap.toml-*" "${cfg:?}/yazi/yazi.toml-*"
+    echo "successfully"
+    exit 0
+    ;;
+  --coverage)
+    echo "coverage configuration"
+    for d in "${config_dirs[@]}"; do
+      rm -rf "${cfg:?}/$d"
+    done
+    for f in "${config_files[@]}"; do
+      rm -rf "${cfg:?}/$f"
+    done
+    for d in "${local_dirs[@]}"; do
+      rm -rf "${loc:?}/$d"
+    done
+    ;;
+  --help|-h)
+    usage
+    exit 0
+    ;;
+  "")
+    ;;
+  *)
+    echo "Error: unknown option '$1'" >&2
+    usage
+    exit 1
+    ;;
+esac
 
 # Copy
 cp -rf src/ssh/* "$ssh"
